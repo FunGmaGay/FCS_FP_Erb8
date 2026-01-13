@@ -1,0 +1,92 @@
+/* Apply Calligraphic Urdu-inspired Font */
+body, h1, h2, h3, h4, h5, h6, p, a, ul, li {
+    font-family: 'Dancing Script', cursive; /* Calligraphic font style */
+}
+
+/* Green color for specific text */
+.pakistani-green {
+    color: #006600;
+}
+
+/* Adjust font sizes for better readability */
+body {
+    font-size: 20px; /* Bigger font size for readability */
+    line-height: 1.8; /* Line height for readability */
+    background-color: #ffffff; /* Background white */
+    color: #000; /* Text color black */
+}
+h1 {
+    font-size: 2.5rem; /* Larger font for headings */
+}
+h2 {
+    font-size: 2rem;
+}
+h3 {
+    font-size: 1.75rem;
+}
+p {
+    font-size: 1.3rem; /* Larger paragraph text */
+}
+
+.navbar-toggler-icon {
+    filter: invert(1); /* Make toggler icon visible on dark bg */
+    }
+
+.navbar-nav .nav-link {
+    font-size: 1.2rem; /* Larger font for navigation links */
+}
+
+.navbar-nav {
+    flex-direction: row; /* Horizontal nav items */
+}
+
+.navbar-nav .nav-item:first-child {
+    margin-left: 0; /* Flush left */
+}
+
+/* Remove margin-left:auto from .navbar-brand */
+.navbar-brand {
+    /* No margin-left here; alignment handled by flex container */
+}
+.center-button {
+    text-align: center;
+    margin-top: 30px;
+}
+.center-button .btn-more-info {
+    background-color: #006600; /* Pakistani green */
+    color: white; /* Text white */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.center-button .btn-more-info:hover {
+    background-color: #004d00;
+    box-shadow: 0 0 10px #006600; /* Glowing effect */
+}
+footer {
+    background-color: #006600;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+footer h2 {
+    font-size: 1.1rem !important; /* Smaller font size with !important to override */
+    line-height: 1;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: normal; /* Optional: reduce boldness */
+}
+
+footer p {
+    font-size: 1em;
+}
+
+footer a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5em;
+    text-decoration: none;
+}

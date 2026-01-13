@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %} 
+
+<!-- Showcase for KYK -->
+    <section id="showcase-inner" class="py-5 showcase-inner">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h1 class="display-5">About Kung Yung Koon</h1>
+                    <h2 class="lead"><b>Public Space X Community X Cross-Cultural Engagement</b></h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Breadcrumb -->
+    <section id="bc" class="mt-3">
+        <div class="container breadcrumb-container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url "kyks:kyk" %}" style="color: #006600"><i class="fa-solid fa-mosque"></i> Kung Yung Koon</a></li>
+                    <li class="breadcrumb-item"><a href="{% url "kyks:activity" %}" style="color: #006600"><i class="fas fa-calendar"></i> Activities</a></li>
+                    <li class="breadcrumb-item"><a href="{% url "kyks:media" %}" style="color: #006600"><i class="fas fa-video"></i> Media</a></li>
+                    <li class="breadcrumb-item"><a href="{% url "kyks:news" %}" style="color: #006600"><i class="fas fa-newspaper"></i> News</a></li>
+                    </ol>
+            </nav>
+        </div>
+    </section>
+    
+    <div id="about" class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 height: 5000px width: 100%">  
+                    <h1>We Empower Communities and Celebrate Diversity in Hong Kong.</h1>
+                    <br>
+                    <img src={% static "images/KYK1.jpg" %} alt="KYK" class="img-fluid" style="max-height: 1500px;width: 100%; object-fit: cover;"/> 
+                    <br/><br>
+                    <img src={% static "images/KYK3.jpg" %} alt="KYK" class="img-fluid" style="max-height: 1500px;width: 100%; object-fit: cover;"/>    
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="min-height: 800px;">
+                        <img class="card-img-top img-fluid" src={% static "images/KYK2.jpg" %} alt="KYK2" style="max-height: 600px; width: 100%; object-fit: cover;"/>
+                        <div class="card-body" style="height: 725px;">
+                            <p class="card-text" style="color: #006600"><b>
+                                Kung Yung Koon (KYK) is an non-profit organization for ethnic minorities that nurtures an integrated society where multi-races can adapt and obtain equity.<b>
+                                <br><br>
+                                <b>We work on empowering the functions of different family roles among South Asians in cooperation with schools, enterprises, organizations, and others.<b>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Center Button -->
+    <div class="center-button">
+        <a href="{% url "pages:index" %}" class="btn btn-more-info">Back to Home</a>
+    </div>
+
+{% endblock %}

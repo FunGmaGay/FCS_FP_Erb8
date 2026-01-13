@@ -1,0 +1,33 @@
+.showcase-inner {
+            background-color: white; /* White background */
+            color: #006600; /* Dark green text color */
+            padding: 2rem; /* Padding for spacing */
+            text-align: center; /* Center the text */
+            border: 5px solid #006600; /* Thick frame */
+        }
+
+        .breadcrumb-container {
+            background-color: breadcrumb-bg;
+            padding: 0.75rem 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px; /* Optional: to make the corners rounded */
+        }
+
+        .breadcrumb {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            background-color: breadcrumb-bg;
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+
+        .breadcrumb-item + .breadcrumb-item::before {
+            content: " / ";
+            padding: 0 0.5rem;
+            color: #006600;
+        }
+
+        .card { margin-bottom: 20px; }
+        .card-img-top { width: 100%; height: auto; }
+        .img-fluid { max-width: 100%; height: auto; }

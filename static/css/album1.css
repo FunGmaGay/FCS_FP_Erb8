@@ -1,0 +1,72 @@
+.album-section {
+    padding: 50px 0;
+}
+
+/* Carousel container with background image */
+.carousel-container {
+    max-width: 800px;
+    margin: 50px auto;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-image: url('/images/frames/frame.jpg'); /* Make sure the path is correct */
+            background-size: cover;
+            background-position: center;
+            min-height: 400px;
+            background-repeat: no-repeat;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel-item img {
+            max-width: 80%;
+            max-height: 700px;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .control {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .control:focus {
+            outline: none;
+        }
+
+        /* Style for the title container */
+        .title-container {
+            text-align: center;
+            margin: 20px auto;
+            color: #006600;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+        }

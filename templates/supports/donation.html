@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %} 
+
+<!-- make changes on the margin of the footer only at this page -->
+<body class="home-page">
+
+<!-- Donation Section -->
+    <div class="background-area" >
+        <div class="transparent-box" >
+            <h2 style="color:#006600">Please donate KYK Foundation</h2>
+        </div>
+        <div class="donation-card">
+            <form id="donationForm" onsubmit="return showThankYouModal(event);">
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">HKD</span>
+                    </div>
+                    <input type="number" id="donationAmount" name="amount" class="form-control" placeholder="Enter amount" min="1" required>
+                </div>
+                <button type="submit" class="support-button">Donate</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Thank You Modal -->
+    <div class="modal fade" id="thankYouModal" tabindex="-1" role="dialog" aria-labelledby="thankYouModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="thankYouModalLabel">Thank You for Your Donation!</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Thank you so much for your sincere donation to KYK Foundation. Your support surely helps us to continue Kung Yung Koon's spirit.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

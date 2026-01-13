@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %} 
+
+<!-- make changes on the margin of the footer only at this page -->
+<body class="home-page">
+    
+<!-- Section for Support Us -->
+    <div class="hero-image">
+        <div class="hero-text">
+            <h1>Your donation is very important to us.</h1>
+            <div class="button-container">
+                <a href="{% url "supports:donation" %}" class="support-button">Donate Us</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,82 @@
+/* adjust the top margin of footer only at this page */
+.home-page footer {
+margin-top: 0 !important;
+padding-top: 2rem;
+}
+.home-page footer .container {
+margin-top: 0;
+margin-bottom: 0;
+padding-top: 0;
+padding-bottom: 0;
+}
+.home-page footer p {
+margin-top: 0;
+margin-bottom: 0;
+}
+.home-page .cta .container > *:last-child {
+margin-bottom: 0 !important;
+}
+
+.background-area {
+            background-image: url('../images/donateus.jpg'); /* Replace with your image paths */
+            background-size: cover; /* Cover both images */
+            background-position: center; /* Position images */
+            height: calc(100vh - 120px); /* Adjust height based on navbar and footer */
+            position: relative;
+            padding: 20px;
+            justify-items: center;
+            
+        }
+        .transparent-box {
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            width: 600px;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Perfect centering */
+            
+            /* position: absolute; /* Position the box absolutely */
+            /* top: 20px; Distance from the top */
+            /* left: 20px; Distance from the left */ 
+        }
+        .donation-card {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: #006600;
+            width: 300px; /* Width of the donation card */
+        }
+        .support-button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none; /* Remove border */
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            margin: 20px auto 0; /* Margin above and below the button */
+        }
+        .amount-input {
+            color: #006600; /* Set text color for the amount input */
+            -moz-appearance: textfield; /* Remove arrows in Firefox */
+        }
+        .amount-input::-webkit-inner-spin-button, 
+        .amount-input::-webkit-outer-spin-button {
+            -webkit-appearance: none; /* Remove arrows in Chrome */
+            margin: 0; /* Remove margin */
+        }
+
+        .modal-content {
+            background-color: #006600; /* Modal background color */
+            color: white; /* Text color */
+            font-family: 'Dancing Script', cursive; /* Align font with navbar */
+        }

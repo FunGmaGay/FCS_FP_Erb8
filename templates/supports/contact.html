@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %} 
+    
+    <!-- Contact Us -->
+    <div class="container mt-5">
+        <div class="text-center mb-5">
+            <h1 class="display-4 fw-bold mb-4" style="color: #006600">Contact Us</h1>
+            <h3 class="lead text-secondary mx-auto" style="max-width: 700px">Get in touch directly with our founder - Fung Chin San. She's always excited to discuss new opportunities, partnerships, and ways to
+            build a caring and inclusive society in Hong Kong together.<b>
+            </h3>
+        </div>
+        <div class="mx-auto" style="max-width: 700px">
+            <div class="bg-white rounded shadow p-4">
+                <div class="position-relative mb-4 overflow-hidden rounded" style="height: 320px">
+                    <img src={% static 'images/founder.jpg' %} alt="Founder Portrait" class="img-fluid w-100" style="object-fit: cover; height: 100%;">
+                    <div class="position-absolute bottom-0 start-0 end-0 p-4" style="background: linear-gradient(to top, rgba(0,0,0,0.7), transparent)">
+                        <h2 class="display-6 text-white">Fung Chin San</h2>
+                        <p class="text-white-50 fs-5">Founder</p>
+                    </div>
+                </div>
+                <div class="d-flex flex-column gap-4">
+                    <div class="d-flex align-items-center">
+                        <div class="mail-circle mr-3">
+                            <i class="fas fa-envelope fa-lg mail-icon"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-medium text-gray-500 mb-1">Email</h3>
+                            <a href="mailto:fungchinsan@mail.com" class="contact-info-text">fungchinsan@mail.com</a>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center justify-content-center rounded-circle mr-3" style = "background-color: #006600; width: 40px; height: 40px;">
+                            <i class="fas fa-phone fa-lg contact-info-icon"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-medium text-gray-500 mb-1">Phone</h3>
+                            <a href="tel:+85297538642" class="contact-info-text">+852 9753-8642</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}  

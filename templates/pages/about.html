@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+<!-- main content -->
+{% block content %}
+
+<!-- Profile Section -->
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-content">
+                <!-- Profile Photo and Title -->
+                <div class="profile-photo">
+                    <img src={% static 'images/founder1.jpeg' %} alt="founder1" class="photo-size">
+                    <h2 style="color: #006600">Founder</h2>
+                </div>
+                <!-- Profile Text -->
+                <div class="profile-text">
+                    <!-- Adding the story in dialog style -->
+                    <p class="dialog">
+                        "At the end of 2016, I was assigned to teach a number of <span class="pakistani-green">Pakistani</span> students who just moved to HK at a secondary school. 
+                        After chatting with them and other <span class="pakistani-green">Pakistani</span> students who have lived in HK since they were born, I was very curious about <span class="pakistani-green">Pakistani</span> 
+                        culture and so tried to search for further information via internet. Eventually, I joined the local tour launched by <span class="pakistani-green">Kung Yung Koon</span> and applied as a volunteer to teach the Pakistani mothers how 
+                        to speak Cantonese and a tutor for the <span class="pakistani-green">Pakistani</span> students. Through the programme, I was assigned to some <span class="pakistani-green">Pakistani</span> 
+                        families while gaining a lot of sweet memories and valuable working experience. Till now, I still keep in touch with some of them. <br><br> 
+                        Therefore, I have established KYK Foundation to run this website to continue the missions of <span class="pakistani-green">Kung Yung Koon (KYK).</span>
+                    </p>
+                </div>
+            </div>
+            <!-- Center Button -->
+            <div class="center-button">
+                <a href="{% url "pages:index" %}" class="btn btn-more-info">Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}   

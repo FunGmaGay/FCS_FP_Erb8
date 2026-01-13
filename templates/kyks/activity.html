@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %} 
+
+<!-- Breadcrumb -->
+<section id="bc" class="mt-3">
+        <div class="container breadcrumb-container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url "kyks:kyk" %}" style="color: #006600"><i class="fa-solid fa-mosque"></i> Kung Yung Koon</a></li>
+                    <li class="breadcrumb-item"><a href="{% url "kyks:activity" %}" style="color: #006600"><i class="fas fa-calendar"></i> Activities</a></li>
+                    <li class="breadcrumb-item"><a href="{% url "kyks:media" %}" style="color: #006600"><i class="fas fa-video"></i> Media</a></li>
+                    <li class="breadcrumb-item"><a href="{% url "kyks:news" %}" style="color: #006600"><i class="fas fa-newspaper"></i> News</a></li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+<!-- Gallery Section -->
+<div class="container">
+    <h1 class="gallery-title">Activities launched by KYK</h1>
+    <div class="album-container">
+        <div class="album-item" onclick="location.href='{% url 'kyks:album1' %}'">
+            <div class="album-frame">
+                <img src={% static "/images/OP/OP1.jpeg" %} alt="Album 1">
+            </div>
+            <h3>Ocean Park Day Trip</h3>
+        </div>
+
+        <div class="album-item" onclick="location.href='{% url 'kyks:album2' %}'">
+            <div class="album-frame">
+                <!-- add style="width:170px; height:auto; , when you modify all picture can delete-->
+                <img src={% static '/images/HV/HV1.jpeg' %} alt="Album 2" >
+            </div>
+            <h3>Home Visits</h3>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Modal for Album 1 -->
+    <div id="modalAlbum1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modalAlbum1')">&times;</span>
+            <h2>Album 1 Photos</h2>
+            <div class="photos">
+                <img src={% static "/images/OP/OP1.jpeg" %} alt="OP1">
+                <img src={% static "/images/OP/OP2.jpeg" %} alt="OP2">
+                <img src={% static "/images/OP/OP3.jpeg" %} alt="OP3">
+                <img src={% static "/images/OP/OP4.jpeg" %} alt="OP4">
+                <img src={% static "/images/OP/OP5.jpeg" %} alt="OP5">
+                <img src={% static "/images/OP/OP6.jpeg" %} alt="OP6">
+                <img src={% static "/images/OP/OP7.jpeg" %} alt="OP7">
+                <img src={% static "/images/OP/OP8.jpeg" %} alt="OP8">
+                <img src={% static "/images/OP/OP9.jpeg" %} alt="OP9">
+                <img src={% static "/images/OP/OP10.jpeg" %} alt="OP10">
+                <img src={% static "/images/OP/OP11.jpeg" %} alt="OP11">
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Album 2 -->
+    <!-- Home Visit Modal -->
+    <div class="modal fade" id="eventHomeVisitModal" tabindex="-1" aria-labelledby="eventHomeVisitLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="eventHomeVisitLabel">Home Visit & Cantonese Teaching</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        These classes aimed to support Pakistani mothers and students who are in need while it provided a chance for local people to learn more about Pakistani culture.
+                    </p>
+                    <div class="gallery">
+                        <img src="/images/class1.jpeg" alt="Class Photo 1">
+                        <img src="/images/class2.jpeg" alt="Class Photo 2">
+                        <img src="/images/class3.jpeg" alt="Class Photo 3">
+                        <img src="/images/class4.jpeg" alt="Class Photo 4">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="modalAlbum2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modalAlbum2')">&times;</span>
+            <h2>Album 2 Photos</h2>
+            <div class="photos">
+                <img src={% static "/images/OP/HV1.jpeg" %} alt="HV1">
+                <img src={% static "/images/OP/HV2.jpeg" %} alt="HV2">
+                <img src={% static "/images/OP/HV3.jpeg" %} alt="HV3">
+                <img src={% static "/images/OP/HV4.jpeg" %} alt="HV4">
+                <img src={% static "/images/OP/HV5.jpeg" %} alt="HV5">
+                <img src={% static "/images/OP/HV6.jpeg" %} alt="HV6">
+                <img src={% static "/images/OP/HV7.jpeg" %} alt="HV7">
+                <img src={% static "/images/OP/HV8.jpeg" %} alt="HV8">
+                <img src={% static "/images/OP/HV9.jpeg" %} alt="HV9">
+                <img src={% static "/images/OP/HV10.jpeg" %} alt="HV10">
+                <img src={% static "/images/OP/HV11.jpeg" %} alt="HV11">
+                <img src={% static "/images/OP/HV12.jpeg" %} alt="HV12">
+                <img src={% static "/images/OP/HV13.jpeg" %} alt="HV13">
+                <img src={% static "/images/OP/HV14.jpeg" %} alt="HV14">
+                <img src={% static "/images/OP/HV15.jpeg" %} alt="HV15">
+                <img src={% static "/images/OP/HV16.jpeg" %} alt="HV16">
+                <img src={% static "/images/OP/HV17.jpeg" %} alt="HV17">
+                <img src={% static "/images/OP/HV18.jpeg" %} alt="HV18">
+                <img src={% static "/images/OP/HV19.jpeg" %} alt="HV19">
+                <img src={% static "/images/OP/HV20.jpeg" %} alt="HV20">
+            </div>
+        </div>
+    </div>
+
+    <!-- Center Button -->
+    <div class="center-button">
+        <a href="{% url "Pages:index" %}" class="btn btn-more-info">Back to Home</a>
+    </div>
+
+{% endblock %}

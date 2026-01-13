@@ -1,0 +1,37 @@
+{% load static %}
+<!-- Navbar -->
+    <nav class="navbar navbar-expand-lg" style="background-color: #006600;">
+        <div class="container-fluid d-flex align-items-center">
+        
+    <!-- Toggler button for collapse on small screens -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible wrapper for nav items -->
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+
+        <!-- Left nav items -->
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link text-white" href="{% url "supports:contact" %}">Contact Us</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="{% url "supports:support" %}">Support Us</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="{% url "kyks:kyk" %}">Kung Yung Koon</a></li>
+            <li class="nav-item"><a class="nav-link text-white" 
+            href="{% url "pages:about" %}">About Us</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="{% url "pages:index" %}">Home</a></li>
+            <!-- other left nav items -->
+        </ul>
+
+        <!-- Right-aligned navigation items -->
+        <ul class="navbar-nav ml-auto">
+            <li {% if 'login' in request.path %}class="nav-item mr.3 active" {% else %} class="nav-item mr-3" {% endif %}><a class="nav-link text-white" href="{% url "accounts:login" %}">Login</a></li>
+            <li {% if 'register' in request.path %}class="nav-item mr-3 active" {% else %} class="nav-item mr-3 active" {% endif %}><a class="nav-link text-white" href="{% url "accounts:register" %}">Register</a></li>
+            <li {% if '/' in request.path %} class="nav-item mr-3 active" {% else %} class="nav-item mr-3 active" {% endif %}>
+            <a class="navbar-brand text-white" href="{% url "pages:index" %}">KYK Foundation</a></li>
+        </ul>
+        </div>
+    </div>
+    </nav>
+
+

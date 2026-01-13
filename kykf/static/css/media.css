@@ -1,0 +1,99 @@
+.news-section {
+            padding: 50px 0;
+        }
+        .carousel-container {
+            max-width: 1.75rem00px;
+            margin: 50px auto;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-image: url('/images/background9.jpg'); /* Make sure the path is correct */
+            background-size: cover;
+            background-position: center;
+            min-height: 400px;
+            background-repeat: no-repeat;
+        }
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            background-color: transparent;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .carousel-item a {
+            text-decoration: none;
+            color: #000;
+            text-align: center;
+            max-width: 45%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .carousel-item a img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .carousel-item a:hover {
+            color: #007BFF;
+        }
+        .controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            /* add pointer-events @13/01/2026*/
+            pointer-events: none;
+        }
+        .control {
+            /* add pointer-events @13/01/2026*/
+            pointer-events: auto;
+            /* background-color: rgba(241, 239, 239, 0.009); */
+            background-color: transparent;
+            color: #006600;
+            border: none;
+            padding: 3px 10px;
+            cursor: pointer;
+            font-size: 28px;
+            /* font-size 箭咀 size */ 
+            /* add width and height @ 13/01/2026 */
+            width: auto;
+            height: auto;
+            /* add display,align-items,justify-items @13/01/2026 */
+            display: inline-flex;
+            align-items:auto;
+            justify-items: flex-end;
+        }
+
+        /* add .control.hover @13/01/2026 */
+        .control:hover {
+            background-color: transparent;
+            color:#006600;
+            outline: none;    
+        }
+
+        .control:focus {
+            background-color: transparent;
+            color:#006600;
+            outline: none;    
+        }
+
+        /* Style for the title container */
+        .title-container {
+            text-align: center;
+            margin: 20px auto;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color:#004400
+        }

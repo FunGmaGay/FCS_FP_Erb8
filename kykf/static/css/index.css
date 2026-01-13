@@ -1,0 +1,28 @@
+/* adjust the top margin of footer only at this page */
+.home-page footer {
+margin-top: 0 !important;
+padding-top: 2rem;
+}
+.home-page footer .container {
+margin-top: 0;
+margin-bottom: 0;
+padding-top: 0;
+padding-bottom: 0;
+}
+.home-page footer p {
+margin-top: 0;
+margin-bottom: 0;
+}
+.home-page .cta .container > *:last-child {
+margin-bottom: 0 !important;
+}
+
+/* Volunteer button color */
+        .btn-volunteer {
+            background-color: #006600; /* Green button */
+            color: #fff; /* White text */
+        }
+        .btn-volunteer:hover {
+            background-color: #004d00; /* Darker green for hover */
+            color: #fff;
+        }

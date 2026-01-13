@@ -1,0 +1,61 @@
+.profile-section {
+            padding: 50px 0;
+        }
+        .profile-content {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 2rem;
+            max-width: 1200px; /* Increased container width */
+            margin: 0 auto; /* Center the container */
+        }
+        .img {
+            width: 100%
+        }
+        .photo-size {
+            max-width: 10000px; /* Increased photo size */
+            height: auto; /* Maintain aspect ratio */
+        }
+        .profile-photo {
+            text-align: center; /* Centers the title below the photo */
+        }
+        .profile-photo img {
+            border-radius: 10px;
+            width: 100%;
+            object-fit: cover;
+            box-shadow: 0 0 15px #006600;
+            flex-shrink: 0; /* Ensures the image doesn't shrink on small screens */
+        }
+        .profile-photo h2 {
+            margin-top: 10px;
+            font-size: 1.5rem;
+            color: #000; /* Changed text color to black */
+        }
+        .profile-text {
+            max-width: 800px;
+            position: relative;
+        }
+        .profile-text p {
+            line-height: 1.8;
+            text-align: justify;
+            margin-bottom: 20px;
+            font-size: 1.3rem; /* Bigger text for readability */
+            color: #000; /* Changed text color to black */
+        }
+        .profile-text .dialog {
+            position: relative;
+            padding: 15px 20px;
+            background-color: #f9f9f9; /* Light gray for dialog background */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-style: italic;
+        }
+        .profile-text .dialog:before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: -20px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent #f9f9f9 transparent transparent;
+        }
