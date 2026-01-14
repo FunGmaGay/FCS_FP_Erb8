@@ -43,6 +43,8 @@ APPLICATION_APPS = ['pages.apps.PagesConfig',
                     'kyks.apps.KyksConfig',
                     'supports.apps.SupportsConfig',
                     'accounts.apps.AccountsConfig',
+                    'workshops.apps.WorkshopsConfig',
+
 
 ]
 

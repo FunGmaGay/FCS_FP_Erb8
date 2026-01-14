@@ -23,5 +23,6 @@ urlpatterns = [
     path('kyks/', include('kyks.urls', namespace='kyks')),
     path('supports/', include('supports.urls', namespace='supports')),
     path('accounts/', include('accounts.urls', namespace='accounts')),
+    path('workshops/', include('workshops.urls', namespace='workshops')),
     path('admin/', admin.site.urls),
 ] 

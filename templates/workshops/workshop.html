@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %} 
+    
+<!-- Workshops -->
+    <section class="workshops-section">
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: #006600; font-size: 2rem;">Let's join our workshops!</h2> <!-- Increased font size -->
+            <div class="row">
+                <!-- Workshop 1 -->
+                <div class="col-md-4 workshops">
+                    <img src={% static 'images/urdu.jpeg' %} alt="Urdu Learning Workshop">
+                    <h3>Urdu Class for Beginners</h3>
+                    <p>Wanna learn Urdu?</p>
+                    <p>Urdu is the mother language of Pakistanis. If you are interested in learning this interesting and beautiful language, don't miss our classes taught by our Urdu teacher - Aness Ali.</p>
+                    <a href="{% url "accounts:register" %}" class="btn btn-light">Apply Now</a>                    
+                </div>
+                <!-- Workshop 2 -->
+                <div class="col-md-4 workshops">
+                    <img src={% static 'images/milktea.jpeg' %} alt="Pakistani Milktea Workshop">
+                    <h3>Pakistani Milktea Workshop</h3>
+                    <p>How to make traditional Pakistani milktea?</p>
+                    <p>Are you a foodie who is interested in Pakistani food and drinks? If yes, don't hesitate to join us. Pakistani Mama - Umza will guide you how to make a tasty one.</p>
+                    <a href="{% url "accounts:register" %}" class="btn btn-light">Apply Now</a>
+                </div>
+                <!-- Workshop 3 -->
+                <div class="col-md-4 workshops">
+                    <img src={% static 'images/henna.jpg' %} alt="Henna Workshop">
+                    <h3>Pakistani Henna Workshop</h3>
+                    <p>Wanna draw henna on your hands?</p>
+                    <p>If you are interested in learning how to draw henna on your hands, our Pakistani henna tutors - Nafessa and Aleena, will be glad to guide you step by step.</p>
+                    <a href="register.html" class="btn btn-light">Apply Now</a>
+                </div>
+            </div>
+        </div>
+        <!-- Center Button -->
+        <div class="center-button">
+            <a href="{% url "pages:index" %}" class="btn btn-more-info">Back to Home</a>
+        </div>
+    </div>
+    </section>
+
+{% endblock %}   
