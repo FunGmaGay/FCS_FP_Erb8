@@ -25,9 +25,9 @@ def logout(request):
     return redirect('pages:index')
 
 def register(request):
-    
+    print("test 1")
     if request.method == 'POST':
-        
+        print("test 2")
         # Handle registration logic here
         first_name = request.POST['first_name']
         last_name = request.POST['last_name']
@@ -37,14 +37,19 @@ def register(request):
         password2 = request.POST['password2']
     
         if password == password2:
+            print("test 3")
             if User.objects.filter(username=username).exists():
+                print("test 4")
                 messages.error(request, 'Username already exists!')
                 return redirect("accounts:register")
             else:
+                print("test 5")
                 if User.objects.filter(email=email).exists():
+                    print("test 6")
                     messages.error(request, 'Email already exists!')
                     return redirect( "accounts:register")
                 else:
+                    print("test 7")
                     user = User.objects.create_user(
                         username=username,
                         password=password,
@@ -56,9 +61,11 @@ def register(request):
                     messages.success(request, 'You have registered successfully and can log in now.')
                     return redirect("accounts:login")
         else: 
+            print("test 8")
             messages.error(request, 'Passwords do not match')
             return redirect("accounts:register")
     else: 
+        print("test 9")
         return render(request, 'accounts/register.html')
 
 def dashboard(request):
