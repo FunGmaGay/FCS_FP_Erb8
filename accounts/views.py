@@ -10,6 +10,7 @@ def login(request):
         password = request.POST['password']
         user = auth.authenticate(username=username, password=password)
         if user is not None:
+            print("user.is_authenticated -", user.is_authenticated)
             auth.login(request, user)
             messages.success(request, 'You have logged in successfully.')
             return redirect('accounts:dashboard')
@@ -69,9 +70,9 @@ def register(request):
         return render(request, 'accounts/register.html')
 
 def dashboard(request):
-    user_contacts = Contact.objects.filter(user_id=request.user.id).order_by('-contact_date')
-    context = {"contacts": user_contacts}
-    return render(request, 'accounts/dashboard.html', context)    
+    #user_contacts = Contact.objects.filter(user_id=request.user.id)
+    #context = {"contacts": user_contacts}
+    return render(request, 'accounts/dashboard.html')    
 
 
 # Create your views here.

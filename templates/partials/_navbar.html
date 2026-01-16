@@ -32,7 +32,7 @@
         <!-- Right-aligned navigation items -->
         <ul class="navbar-nav ml-auto">
             {% if user.is_authenticated %}
-            <li {% if 'dashboard' in request.path %} class="nav-item mr-3 active" {% else %} class="nav-item mr-3" {% endif %}>
+            <li class="nav-item mr-3 active">
             <a class="nav-link" href="{% url 'accounts:dashboard' %}">
                 <i class="fas fa-user-plus"></i> Welcome {{ user.username }} (dashboard)</a>
             </li>
@@ -46,14 +46,17 @@
             <input type="hidden"/>
         </form>
         </li>
-        {% else %}
+            {% else %}
             
-            <li {% if 'login' in request.path %}class="nav-item mr.3 active" {% else %} class="nav-item mr-3" {% endif %}><a class="nav-link text-white" href="{% url "accounts:login" %}">Login</a></li>
+            <li class="nav-item mr.3 active">
+                <a class="nav-link text-white" href="{% url "accounts:login" %}">Login</a></li>
             
-            <li {% if 'register' in request.path %}class="nav-item mr-3 active" {% else %} class="nav-item mr-3 active" {% endif %}><a class="nav-link text-white" href="{% url "accounts:register" %}">Register</a></li>
-            <li {% if '/' in request.path %} class="nav-item mr-3 active" {% else %} class="nav-item mr-3 active" {% endif %}>
-            <a class="navbar-brand text-white" href="{% url "pages:index" %}">KYK Foundation</a></li>
+            <li class="nav-item mr-3 active">
+                <a class="nav-link text-white" href="{% url "accounts:register" %}">Register</a></li>
             {% endif %}
+            <li class="nav-item mr-3 active">
+            <a class="navbar-brand text-white" href="{% url "pages:index" %}">KYK Foundation</a></li>
+            
         </ul>
     </div>
     </nav>

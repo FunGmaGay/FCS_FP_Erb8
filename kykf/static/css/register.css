@@ -62,3 +62,7 @@
             color: white; /* Text color */
             font-family: 'Dancing Script', cursive; /* Align font with navbar */
         }
+
+        input[type="text"]:focus {
+            border-color: #006600;
+        }
