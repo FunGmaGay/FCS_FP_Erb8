@@ -62,3 +62,18 @@
             color: white; /* Text color */
             font-family: 'Dancing Script', cursive; /* Align font with navbar */
         }
+
+        input[type="text"]:focus {
+            border-color: #006600; /* Green border color when focused */
+            box-shadow: 0 0 0 0.2rem rgba(0, 102, 0, 0.25);
+        }
+
+        input[type="password"]:focus {
+            border-color: #006600; /* Green border color when focused */
+            box-shadow: 0 0 0 0.2rem rgba(0, 102, 0, 0.25)
+        }
+
+        .form-control:focus {
+            border-color: #006600; /* Green border color when focused */
+            box-shadow: 0 0 0 0.2rem rgba(0, 102, 0, 0.25);
+        }

@@ -59,7 +59,8 @@
         .control {
             /* add pointer-events @13/01/2026*/
             pointer-events: auto;
-            background-color: rgba(241, 239, 239, 0.009);
+            /* background-color: rgba(241, 239, 239, 0.009); */
+            background-color: transparent;
             color: #006600;
             border: none;
             padding: 3px 10px;

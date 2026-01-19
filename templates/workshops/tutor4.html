@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- Use a bold modern font for 2026 -->
+<link href="https://fonts.googleapis.com" rel="stylesheet">
+
+<section class="asymmetric-section p-0 position-relative" style="min-height: 100vh; background-color: #f4f4f4;">
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- Left Side: Large Photo and Main Content -->
+            <div class="col-lg-7 p-0">
+                <div class="main-photo-container">
+                    <img src="{% static 'images/urdu.jpeg' %}" class="img-fluid main-urdu-photo" alt="Urdu Calligraphy">
+                    <div class="image-text-overlay p-4">
+                        <h1 class="display-1 font-weight-bold">MAST<span class="text-success">ER</span>ING URDU</h1>
+                        <p class="lead">Beginner Workshop 2026</p>
+                        <a href="{% url 'accounts:register' %}" class="btn-enroll-animated mt-3">JOIN NOW →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Details and Shaking Tutor Card -->
+            <div class="col-lg-5 p-5">
+                
+                <!-- THE SHAKING TUTOR CARD (Top Right) -->
+                <div class="tutor-shaker-wrapper position-absolute top-0 end-0 p-4">
+                    <div class="tutor-card-fixed p-3 shadow-lg shake-animation">
+                        <img src="{% static 'images/tutor_placeholder.jpg' %}" class="rounded-circle mb-2" alt="Aness Ali">
+                        <h5 class="mb-0">Aness Ali</h5>
+                        <p class="small text-muted mb-0">Cultural Envoy</p>
+                        <span class="badge badge-success mt-1">Live 🟢</span>
+                    </div>
+                </div>
+
+                <!-- Main Details Section -->
+                <div style="margin-top: 150px;"> <!-- Pushes content down past the floating tutor -->
+                    <h2 class="font-weight-bold mb-4">"Language is the key to a nation's heart."</h2>
+                    <p class="text-secondary mb-4">
+                        Dive deep into the phonetic beauty of Urdu. This course structure is designed to take you from foundational script knowledge to conversational fluency in just 8 weeks. Experience poetry, history, and culture all in one place.
+                    </p>
+
+                    <ul class="course-features-list">
+                        <li><i class="fas fa-check-circle text-success"></i> 8 Weeks Intensive</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Learn Nastaliq Script</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Small Class Sizes (Max 15)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

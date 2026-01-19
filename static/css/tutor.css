@@ -1,0 +1,33 @@
+
+    /* Creative Overlap Effect */
+    .creative-hero { position: relative; padding: 80px 0; overflow: hidden; }
+    .floating-tutor-card {
+        position: absolute;
+        top: 15%;
+        right: 5%;
+        width: 380px;
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 30px;
+        transform: rotate(2deg);
+        transition: transform 0.4s ease;
+    }
+    .floating-tutor-card:hover { transform: rotate(0deg) scale(1.02); }
+    .workshop-bg-text {
+        position: absolute;
+        font-size: 12rem;
+        font-weight: 900;
+        color: rgba(0, 102, 0, 0.05);
+        top: -50px;
+        left: -20px;
+        z-index: -1;
+        pointer-events: none;
+    }
+    .accent-blob {
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(0,102,0,0.1) 0%, rgba(255,255,255,0) 70%);
+        top: 0; left: 0; z-index: -2;
+    }

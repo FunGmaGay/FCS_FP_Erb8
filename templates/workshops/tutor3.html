@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="creative-hero workshops-section" style="background-color: #ffffff;">
+    <!-- Background Text aligned with Navbar Color -->
+    <div class="workshop-bg-text" style="color: rgba(0, 102, 0, 0.05); font-size: 12rem; position: absolute; right: 0; top: 50px; font-weight: 900; z-index: 0;">HENNA</div>
+    
+    <div class="container" style="position: relative; z-index: 1;">
+        <div class="row">
+            <!-- Main Content Area -->
+            <div class="col-lg-8">
+                <!-- Header using Brand Color #006600 -->
+                <h1 style="font-family: 'Dancing Script', cursive; color: #006600; font-size: 4.5rem;" class="mb-0">
+                    Art of Mehndi
+                </h1>
+                <p class="text-uppercase tracking-wider mb-5" style="letter-spacing: 4px; color: #666;">Creative Design Workshop 2026</p>
+                
+                <div class="main-image-container mb-4">
+                    <!-- Image border matches the Navbar brand color -->
+                    <img src="{% static 'images/henna.jpg' %}" class="img-fluid shadow" style="border-radius: 50px 0 50px 0; width: 100%; height: 500px; object-fit: cover; border-left: 10px solid #006600;">
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-md-10">
+                        <p class="lead font-italic" style="color: #006600;">"Tracing tradition onto the canvas of the soul."</p>
+                        <p>Master the intricate flow of the henna cone. Our 2026 curriculum covers everything from organic paste preparation to mastering the symmetrical geometric patterns and floral motifs famous in Pakistani celebrations.</p>
+                        
+                        <!-- Apply Now Button matches Navbar Color -->
+                        <a href="{% url 'accounts:register' %}" class="btn btn-lg px-5 py-3 mt-3" style="border-radius: 50px; background-color: #006600; color: white; border: none; font-weight: bold;">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Tutor Card -->
+        <div class="floating-tutor-card shadow-lg p-4 d-none d-lg-block" style="border-bottom: 8px solid #006600;">
+            <div class="text-center">
+                <div style="position: relative; display: inline-block;">
+                    <!-- Placeholder for the photo of Nafessa and Aleena -->
+                    <img src="{% static 'images/tutor_henna.jpg' %}" class="rounded-circle shadow mb-3" style="width: 140px; height: 140px; border: 5px solid #fff; object-fit: cover;">
+                    <span class="badge px-3 py-2" style="position: absolute; bottom: 15px; right: -10px; border-radius: 20px; background: #006600; color: white;">Lead Artists</span>
+                </div>
+                <h2 style="font-family: 'Dancing Script', cursive; font-size: 2.2rem; color: #006600;">Nafessa & Aleena</h2>
+                <p class="small text-muted mb-4">Master Mehndi Specialists</p>
+                <div class="bio-text text-left small text-secondary px-2" style="line-height: 1.6;">
+                    With combined decades of experience in bridal and festive henna, Nafessa and Aleena specialize in high-detail Pakistani fusion styles and organic stain science.
+                </div>
+                <hr>
+                <div class="social-icons">
+                    <a href="#" class="mx-2" style="color: #006600;"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="mx-2" style="color: #006600;"><i class="fab fa-pinterest"></i></a>
+                    <a href="#" class="mx-2" style="color: #006600;"><i class="fas fa-palette"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Back Button (Consistent with your index style) -->
+<div class="center-button py-5">
+    <a href="{% url 'pages:index' %}" class="btn btn-more-info" style="background-color: #006600; color: white;">Back to Home</a>
+</div>
+
+{% endblock %}
+
