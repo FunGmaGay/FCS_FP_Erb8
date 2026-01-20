@@ -1,3 +1,4 @@
+from tutors.models import Tutor
 from django.contrib import admin
 from django.db import models
 
@@ -19,6 +20,7 @@ class Workshop(models.Model):
     applied_no = models.IntegerField()
     is_published = models.BooleanField(default=True)
     list_date = models.DateTimeField(auto_now_add=True)
+    tutor = models.ForeignKey(Tutor, on_delete=models.DO_NOTHING)
 
     class Meta:
         ordering = ['-start_date', '-start_time']

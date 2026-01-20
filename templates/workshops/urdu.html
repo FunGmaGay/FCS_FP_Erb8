@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- Font Import for the Artistic Look -->
+<link href="https://fonts.googleapis.com" rel="stylesheet">
+
+<style>
+    /* THE CSS CODES YOU PROVIDED */
+    .creative-hero { position: relative; padding: 80px 0; overflow: hidden; }
+    
+    .floating-tutor-card {
+        position: absolute;
+        top: 15%;
+        right: 5%;
+        width: 380px;
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 30px;
+        transform: rotate(2deg);
+        transition: transform 0.4s ease;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    
+    .floating-tutor-card:hover { 
+        transform: rotate(0deg) scale(1.02); 
+    }
+    
+    .workshop-bg-text {
+        position: absolute;
+        font-size: 12rem;
+        font-weight: 900;
+        color: rgba(0, 102, 0, 0.05);
+        top: -50px;
+        left: -20px;
+        z-index: -1;
+        pointer-events: none;
+    }
+    
+    .accent-blob {
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(0,102,0,0.1) 0%, rgba(255,255,255,0) 70%);
+        top: 0; left: 0; z-index: -2;
+    }
+
+    /* Supporting Styles for Content */
+    .main-title {
+        font-family: 'Dancing Script', cursive;
+        font-size: 5rem;
+        color: #006600;
+    }
+    .hero-img {
+        border-radius: 50px 0 50px 0;
+        width: 100%;
+        height: 550px;
+        object-fit: cover;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+    .btn-apply {
+        background: #000;
+        color: #fff;
+        padding: 18px 45px;
+        border-radius: 50px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: 0.3s;
+    }
+    .btn-apply:hover {
+        background: #006600;
+        color: #fff;
+        transform: translateY(-3px);
+    }
+</style>
+
+<section class="creative-hero">
+    <!-- Decorative Background Elements from your CSS -->
+    <div class="workshop-bg-text">URDU</div>
+    <div class="accent-blob"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <h1 class="main-title mb-4">Urdu Class for Beginners</h1>
+                
+                <!-- Main Featured Image -->
+                <div class="position-relative mb-5">
+                    <img src="{% static 'images/urdu.jpeg' %}" class="hero-img" alt="Urdu Calligraphy">
+                </div>
+
+                <!-- Descriptive Content -->
+                <div class="row">
+                    <div class="col-md-9">
+                        <p class="lead font-italic mb-4" style="color: #444; border-left: 4px solid #006600; padding-left: 20px;">
+                            "Language is the key to a nation's heart."
+                        </p>
+                        <p class="text-secondary mb-5" style="font-size: 1.1rem; line-height: 1.8;">
+                            Dive into the phonetic beauty of Urdu. This isn't just a class; it's a cultural immersion into the poetry and history of Pakistan. Master the script and speak with confidence in 8 weeks.
+                        </p>
+                        <a href="{% url 'accounts:register' %}" class="btn btn-apply shadow-lg">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- THE FLOATING TUTOR CARD (from your CSS) -->
+        <div class="floating-tutor-card p-4 d-none d-lg-block">
+            <div class="text-center">
+                <div class="position-relative d-inline-block mb-3">
+                    <img src="{% static 'images/tutor_placeholder.jpg' %}" 
+                         class="rounded-circle shadow" 
+                         style="width: 130px; height: 130px; border: 5px solid #fff;">
+                    <span class="badge position-absolute" 
+                          style="bottom: 10px; right: -10px; background: #006600; color: white; padding: 8px 15px; border-radius: 20px;">
+                          Expert Tutor
+                    </span>
+                </div>
+                
+                <h3 style="font-family: 'Dancing Script', cursive; font-size: 2.2rem; color: #333;">Aness Ali</h3>
+                <p class="text-muted small mb-3">Urdu Linguist & Cultural Envoy</p>
+                
+                <div class="text-left small text-secondary px-3 mb-4">
+                    Aness has spent 15 years perfecting a teaching method that turns beginners into conversational speakers in just 8 weeks.
+                </div>
+                
+                <hr class="my-4">
+                
+                <div class="d-flex justify-content-center gap-4">
+                    <a href="#" class="text-dark"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" class="text-dark"><i class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="#" class="text-dark"><i class="far fa-paper-plane fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Back Home Button -->
+<div class="text-center py-5">
+    <a href="{% url 'pages:index' %}" class="btn text-muted" style="border-bottom: 2px solid #ddd; border-radius: 0;">
+        <i class="fas fa-long-arrow-alt-left mr-2"></i> Back to Catalog
+    </a>
+</div>
+
+{% endblock %}

@@ -5,9 +5,11 @@ from django.db import models
 
 class Tutor(models.Model):
     tutor_name = models.CharField(max_length=50)
-    detail = models.CharField(max_length=50)
+    tagline1 = models.CharField(max_length=50)
     experience = models.CharField(max_length=500)
     tutor_photo = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
+    quote1 = models.CharField(max_length=50)
+    detail1 = models.CharField(max_length=50)
     is_published = models.BooleanField(default=True)
     
 
