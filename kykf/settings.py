@@ -37,7 +37,6 @@ APPLICATION_APPS = ['pages.apps.PagesConfig',
                     'accounts.apps.AccountsConfig',
                     'workshops.apps.WorkshopsConfig',
                     'enrolments.apps.EnrolmentsConfig',
-                    'tutors.apps.TutorsConfig',
 ]
 
 THIRD_PARTY_APPS = ["debug_toolbar",

@@ -26,6 +26,7 @@ urlpatterns = [
     path('supports/', include('supports.urls', namespace='supports')),
     path('accounts/', include('accounts.urls', namespace='accounts')),
     path('workshops/', include('workshops.urls', namespace='workshops')),
+    #path('enrolments/', include('enrolments.urls', namespace='enrolments')),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT) + debug_toolbar_urls()
 
