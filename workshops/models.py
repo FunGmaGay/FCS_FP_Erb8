@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 
@@ -14,11 +15,11 @@ class Workshop(models.Model):
     experience = models.CharField(max_length=500, default=' ')
     tutor_photo = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     quote = models.CharField(max_length=50, default=' ')
-    detail = models.CharField(max_length=50, default=' ')
+    detail = models.CharField(max_length=500, default=' ')
 
     day_of_the_week = models.CharField(max_length=3, default=' ')
     start_date = models.DateField()
-    start_time = models.TimeField()
+    start_time = models.TimeField(default=timezone.now)
     # fee = models.IntegerField()
     # tagline = models.CharField(max_length=100)
     # description = models.CharField(max_length=500)
