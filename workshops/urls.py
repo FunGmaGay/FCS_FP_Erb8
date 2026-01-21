@@ -5,4 +5,5 @@ app_name = 'workshops'
 
 urlpatterns = [
     path('workshop', views.workshop, name='workshop'),
-    path('form', views.form, name='form'),]
+    #path('form', views.form, name='form'),
+]
