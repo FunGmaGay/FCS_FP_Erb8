@@ -6,8 +6,7 @@
 <link href="https://fonts.googleapis.com" rel="stylesheet">
 
 <style>
-    /* THE CSS CODES YOU PROVIDED */
-    .creative-hero { position: relative; padding: 80px 0; overflow: hidden; }
+.creative-hero { position: relative; padding: 80px 0; overflow: hidden; }
     
     .floating-tutor-card {
         position: absolute;
@@ -76,6 +75,7 @@
     }
 </style>
 
+
 <section class="creative-hero">
     <!-- Decorative Background Elements from your CSS -->
     <div class="workshop-bg-text">URDU</div>
@@ -88,7 +88,7 @@
                 
                 <!-- Main Featured Image -->
                 <div class="position-relative mb-5">
-                    <img src="{% static 'images/urdu.jpeg' %}" class="hero-img" alt="Urdu Calligraphy">
+                    <img src="{{ workshop.ws_photo.url }}" class="hero-img" alt="Urdu Calligraphy">
                 </div>
 
                 <!-- Descriptive Content -->
@@ -100,7 +100,7 @@
                         <p class="text-secondary mb-5" style="font-size: 1.1rem; line-height: 1.8;">
                             Dive into the phonetic beauty of Urdu. This isn't just a class; it's a cultural immersion into the poetry and history of Pakistan. Master the script and speak with confidence in 8 weeks.
                         </p>
-                        <a href="{% url 'accounts:register' %}" class="btn btn-apply shadow-lg">Apply Now</a>
+                        <a href="{% url 'enrolments:apply' 1 %}" class="btn btn-apply shadow-lg">Apply Now</a>
                     </div>
                 </div>
             </div>
@@ -110,12 +110,12 @@
         <div class="floating-tutor-card p-4 d-none d-lg-block">
             <div class="text-center">
                 <div class="position-relative d-inline-block mb-3">
-                    <img src="{% static 'images/tutor_placeholder.jpg' %}" 
-                         class="rounded-circle shadow" 
-                         style="width: 130px; height: 130px; border: 5px solid #fff;">
+                    <img src="{{ workshop.tutor_photo.url }}" 
+                        class="rounded-circle shadow" 
+                        style="width: 130px; height: 130px; border: 5px solid #fff;">
                     <span class="badge position-absolute" 
-                          style="bottom: 10px; right: -10px; background: #006600; color: white; padding: 8px 15px; border-radius: 20px;">
-                          Expert Tutor
+                        style="bottom: 10px; right: -10px; background: #006600; color: white; padding: 8px 15px; border-radius: 20px;">
+                        Expert Tutor
                     </span>
                 </div>
                 
@@ -141,7 +141,6 @@
 <!-- Back Home Button -->
 <div class="text-center py-5">
     <a href="{% url 'pages:index' %}" class="btn text-muted" style="border-bottom: 2px solid #ddd; border-radius: 0;">
-        <i class="fas fa-long-arrow-alt-left mr-2"></i> Back to Catalog
     </a>
 </div>
 

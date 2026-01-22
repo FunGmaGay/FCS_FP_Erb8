@@ -80,3 +80,8 @@ margin-bottom: 0 !important;
             color: white; /* Text color */
             font-family: 'Dancing Script', cursive; /* Align font with navbar */
         }
+
+        .modal-backdrop {
+            position: relative;
+            z-index: -1
+        }

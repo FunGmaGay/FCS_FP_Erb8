@@ -22,9 +22,10 @@ from debug_toolbar.toolbar import debug_toolbar_urls
 
 urlpatterns = [
     path('', include('pages.urls', namespace='pages')),
+    path('accounts/', include('accounts.urls', namespace='accounts')),
+    path('enrolments/', include('enrolments.urls', namespace='enrolments')),
     path('kyks/', include('kyks.urls', namespace='kyks')),
     path('supports/', include('supports.urls', namespace='supports')),
-    path('accounts/', include('accounts.urls', namespace='accounts')),
     path('workshops/', include('workshops.urls', namespace='workshops')),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT) + debug_toolbar_urls()
