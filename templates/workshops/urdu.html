@@ -84,7 +84,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
-                <h1 class="main-title mb-4">Urdu Class for Beginners</h1>
+                <h1 class="main-title mb-4">{{ workshop.workshop }}</h1>
                 
                 <!-- Main Featured Image -->
                 <div class="position-relative mb-5">
@@ -95,12 +95,12 @@
                 <div class="row">
                     <div class="col-md-9">
                         <p class="lead font-italic mb-4" style="color: #444; border-left: 4px solid #006600; padding-left: 20px;">
-                            "Language is the key to a nation's heart."
+                            {{ workshop.quote }}
                         </p>
                         <p class="text-secondary mb-5" style="font-size: 1.1rem; line-height: 1.8;">
-                            Dive into the phonetic beauty of Urdu. This isn't just a class; it's a cultural immersion into the poetry and history of Pakistan. Master the script and speak with confidence in 8 weeks.
+                            {{ workshop.detail }}
                         </p>
-                        <a href="{% url 'enrolments:apply' 1 %}" class="btn btn-apply shadow-lg">Apply Now</a>
+                        <a href="{% url 'enrolments:apply' %}/1" class="btn btn-apply shadow-lg">Apply Now</a>
                     </div>
                 </div>
             </div>
@@ -119,11 +119,11 @@
                     </span>
                 </div>
                 
-                <h3 style="font-family: 'Dancing Script', cursive; font-size: 2.2rem; color: #333;">Aness Ali</h3>
-                <p class="text-muted small mb-3">Urdu Linguist & Cultural Envoy</p>
+                <h3 style="font-family: 'Dancing Script', cursive; font-size: 2.2rem; color: #333;">{{ workshop.tutor_name }}</h3>
+                <p class="text-muted small mb-3">{{ workshop.tagline }}</p>
                 
                 <div class="text-left small text-secondary px-3 mb-4">
-                    Aness has spent 15 years perfecting a teaching method that turns beginners into conversational speakers in just 8 weeks.
+                    {{ workshop.experience }}
                 </div>
                 
                 <hr class="my-4">

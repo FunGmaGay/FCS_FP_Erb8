@@ -1,0 +1,79 @@
+.register-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .register-header {
+            color: #006600;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .register-header h4 {
+            color: #006600;
+            font-size: 1.7em;
+        }
+
+        .form-group label {
+            color: #006600;
+        }
+
+        .btn-custom {
+            background-color: #006600;
+            color: white;
+            border-color: #006600;
+            padding: 12px 20px;
+            font-size: 1.2em;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .alert-section {
+            padding: 20px;
+            background-color: #f0f8ff;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+        .alert-success {
+            color: #fff;
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+        .alert-heading {
+            color: #fff;
+            font-size: 1.5rem;
+        }
+        p {
+            color: #fff;
+        }
+        hr {
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .mb-0 {
+            margin-bottom: 0;
+        }
+
+        .modal-content {
+            background-color: #006600; /* Modal background color */
+            color: white; /* Text color */
+            font-family: 'Dancing Script', cursive; /* Align font with navbar */
+        }
+
+        input[type="text"]:focus {
+            border-color: #006600; /* Green border color when focused */
+            box-shadow: 0 0 0 0.2rem rgba(0, 102, 0, 0.25);
+        }
+
+        input[type="password"]:focus {
+            border-color: #006600; /* Green border color when focused */
+            box-shadow: 0 0 0 0.2rem rgba(0, 102, 0, 0.25)
+        }
+
+        .form-control:focus {
+            border-color: #006600; /* Green border color when focused */
+            box-shadow: 0 0 0 0.2rem rgba(0, 102, 0, 0.25);
+        }

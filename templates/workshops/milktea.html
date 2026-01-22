@@ -23,10 +23,10 @@
         background: radial-gradient(circle, rgba(139, 69, 19, 0.1) 0%, rgba(255,255,255,0) 70%);
         top: 0; left: 0; z-index: -2;
     }
-    .main-title { font-family: 'Dancing Script', cursive; font-size: 5rem; color: #8B4513; }
+    .main-title { font-family: 'Dancing Script', cursive; font-size: 5rem; color: #006600; }
     .hero-img { border-radius: 50px 0 50px 0; width: 100%; height: 550px; object-fit: cover; box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
     .btn-apply { background: #000; color: #fff; padding: 18px 45px; border-radius: 50px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; text-decoration: none; display: inline-block; }
-    .btn-apply:hover { background: #8B4513; color: #fff; transform: translateY(-3px); }
+    .btn-apply:hover { background: #006600; color: #fff; transform: translateY(-3px); }
 </style>
 
 <section class="creative-hero">
@@ -36,22 +36,19 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
-                <p class="text-uppercase tracking-widest text-muted mb-0" style="letter-spacing: 5px;">2026 CRAFT SERIES</p>
-                <h1 class="main-title mb-4">Hong Kong Milk Tea</h1>
+                <h1 class="main-title mb-4">{{ workshop.workshop }}</h1>
                 
                 <div class="position-relative mb-5">
-                    <img src="{% static 'images/milktea.jpeg' %}" class="hero-img" alt="Milk Tea">
+                    <img src="{{ workshop.ws_photo.url }}" class="hero-img" alt="Milk Tea">
                 </div>
 
                 <div class="row">
                     <div class="col-md-9">
-                        <p class="lead font-italic mb-4" style="color: #444; border-left: 4px solid #8B4513; padding-left: 20px;">
-                            "The art of the golden ratio."
+                        <p class="lead font-italic mb-4" style="color: #444; border-left: 4px solid #006600; padding-left: 20px;">{{ workshop.quote }}
                         </p>
-                        <p class="text-secondary mb-5" style="font-size: 1.1rem; line-height: 1.8;">
-                            Master the Intangible Cultural Heritage of "Silk Stocking" Milk Tea. Learn the secret tea blends, the technique of "pulling" for aeration, and achieving the perfect velvet texture.
+                        <p class="text-secondary mb-5" style="font-size: 1.1rem; line-height: 1.8;">{{ workshop.detail }}
                         </p>
-                        <a href="{% url 'accounts:register' %}" class="btn btn-apply">Apply Now</a>
+                        <a href="{% url 'enrolments:apply' %}/2" class="btn btn-apply">Apply Now</a>
                     </div>
                 </div>
             </div>
@@ -60,13 +57,13 @@
         <div class="floating-tutor-card p-4 d-none d-lg-block">
             <div class="text-center">
                 <div class="position-relative d-inline-block mb-3">
-                    <img src="{% static 'images/tutor_placeholder.jpg' %}" class="rounded-circle shadow" style="width: 130px; height: 130px; border: 5px solid #fff;">
-                    <span class="badge position-absolute" style="bottom: 10px; right: -10px; background: #8B4513; color: white; padding: 8px 15px; border-radius: 20px;">Master Brewer</span>
+                    <img src="{{ workshop.tutor_photo.url }}" class="rounded-circle shadow" style="width: 130px; height: 130px; border: 5px solid #fff;">
+                    <span class="badge position-absolute" style="bottom: 10px; right: -10px; background: #006600; color: white; padding: 8px 15px; border-radius: 20px;">Master Brewer</span>
                 </div>
-                <h3 style="font-family: 'Dancing Script', cursive; font-size: 2.2rem; color: #333;">Donald Tse</h3>
-                <p class="text-muted small mb-3">Tea Sommelier & Artisan</p>
+                <h3 style="font-family: 'Dancing Script', cursive; font-size: 2.2rem; color: #333;">{{ workshop.tutor_name }}</h3>
+                <p class="text-muted small mb-3">{{ workshop.tagline }}</p>
                 <div class="text-left small text-secondary px-3 mb-4">
-                    With 20 years behind the counter, Donald teaches the precise simmering times and collision techniques that define premium tea.
+                    {{ workshop.experience }}
                 </div>
                 <hr class="my-4">
                 <div class="d-flex justify-content-center gap-4">

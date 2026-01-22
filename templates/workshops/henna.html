@@ -36,22 +36,21 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
-                <p class="text-uppercase tracking-widest text-muted mb-0" style="letter-spacing: 5px;">2026 ART SERIES</p>
-                <h1 class="main-title mb-4">Henna Mastery</h1>
+                <h1 class="main-title mb-4">{{ workshop.workshop }}</h1>
                 
                 <div class="position-relative mb-5">
-                    <img src="{% static 'images/henna.jpeg' %}" class="hero-img" alt="Henna Art">
+                    <img src="{{ workshop.ws_photo.url }}" class="hero-img" alt="Henna Art">
                 </div>
 
                 <div class="row">
                     <div class="col-md-9">
                         <p class="lead font-italic mb-4" style="color: #444; border-left: 4px solid #065F46; padding-left: 20px;">
-                            "The art that stains the soul."
+                            {{ workshop.quote }}
                         </p>
                         <p class="text-secondary mb-5" style="font-size: 1.1rem; line-height: 1.8;">
-                            Discover the intricate world of henna artistry. From natural paste preparation to mastering Khaleeji and Moroccan geometric patterns, this workshop is designed for aspiring artists.
+                            {{ workshop.detail }}
                         </p>
-                        <a href="{% url 'accounts:register' %}" class="btn btn-apply">Apply Now</a>
+                        <a href="{% url 'enrolments:apply' %}/3" class="btn btn-apply">Apply Now</a>
                     </div>
                 </div>
             </div>
@@ -60,13 +59,13 @@
         <div class="floating-tutor-card p-4 d-none d-lg-block">
             <div class="text-center">
                 <div class="position-relative d-inline-block mb-3">
-                    <img src="{% static 'images/tutor_placeholder.jpg' %}" class="rounded-circle shadow" style="width: 130px; height: 130px; border: 5px solid #fff;">
+                    <img src="{{ workshop.tutor_photo.url }}"  class="rounded-circle shadow" style="width: 130px; height: 130px; border: 5px solid #fff;">
                     <span class="badge position-absolute" style="bottom: 10px; right: -10px; background: #065F46; color: white; padding: 8px 15px; border-radius: 20px;">Master Artist</span>
                 </div>
-                <h3 style="font-family: 'Dancing Script', cursive; font-size: 2.2rem; color: #333;">Zahraa Khan</h3>
-                <p class="text-muted small mb-3">Bridal Artist & Instructor</p>
+                <h3 style="font-family: 'Dancing Script', cursive; font-size: 2.2rem; color: #333;">{{ workshop.tutor_name }}</h3>
+                <p class="text-muted small mb-3">{{ workshop.tagline }}</p>
                 <div class="text-left small text-secondary px-3 mb-4">
-                    Zahraa is a world-renowned bridal artist specializing in intricate organic henna designs and modern fusion motifs.
+                    {{ workshop.experience }}
                 </div>
                 <hr class="my-4">
                 <div class="d-flex justify-content-center gap-4">

@@ -1,0 +1,104 @@
+:root {
+    --primary-color: #006600; /* Your theme color */
+}
+
+body {
+    font-family: 'Dancing Script', cursive; /* Consistent font */
+    background: #f3f3f3; /* General background color */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: relative;
+    display: flex; /* Align both forms */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+.container_form {
+    width: 50%; /* Each form takes half the container width */
+    position: absolute; /* Allows forms to overlap for sliding */
+    transition: transform 0.6s ease-in-out; /* Smooth transition */
+    padding: 20px; /* Padding for form content */
+    background-color: #f9f9f9; /* Background for forms */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow for elevation */
+}
+
+.container--signin {
+    transform: translateX(0%); /* Position of sign-in form */
+}
+
+.container--signup {
+    transform: translateX(-100%); /* Position of sign-up form off-screen */
+}
+
+.right-panel-active .container--signin {
+    transform: translateX(100%); /* Slide out when login active */
+}
+
+.right-panel-active .container--signup {
+    transform: translateX(0%); /* Slide in for register */
+}
+
+.register-header,
+.login-header {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.register-header h4,
+.login-header h4 {
+    font-size: 1.7em; /* Consistent header size */
+    margin: 0;
+}
+
+.login-header i {
+    color: var(--primary-color);
+    font-size: 1.5em;
+}
+
+.form-group label {
+    color: var(--primary-color); /* Consistent form label color */
+}
+
+.btn-custom {
+    background-color: var(--primary-color); /* Button background */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    padding: 12px 20px; /* Button padding */
+    font-size: 1.2em; /* Button font size */
+    width: 100%; /* Full width */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.alert-section {
+    padding: 20px;
+    background-color: #f0f8ff; /* Alert section background */
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.alert-success {
+    background-color: #28a745; /* Success background */
+}
+
+.alert-heading {
+    color: #fff; /* Color for alert heading */
+    font-size: 1.5rem; /* Text size for headings */
+}
+
+.modal-content {
+    background-color: var(--primary-color); /* Modal background */
+    color: white; /* Text color in modal */
+}
+
+/* Focus styles for inputs */
+input:focus,
+.form-control:focus {
+    border-color: var(--primary-color); /* Input border on focus */
+    box-shadow: 0 0 0 0.2rem rgba(0, 102, 0, 0.25); /* Focus shadow effect */
+}

@@ -13,10 +13,13 @@ def urdu(request):
     return render(request, 'workshops/urdu.html', context)
 
 def milktea(request):
-    
-    return render(request, 'workshops/milktea.html',)
+    workshop = get_object_or_404(Workshop, pk=2)
+    context = {"workshop":workshop}
+    return render(request, 'workshops/milktea.html', context)
 
 def henna(request):
-    return render(request, 'workshops/henna.html',)
+    workshop = get_object_or_404(Workshop, pk=3)
+    context = {"workshop":workshop}
+    return render(request, 'workshops/henna.html', context)
 
 # Create your views here.
