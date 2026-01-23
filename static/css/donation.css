@@ -35,7 +35,7 @@ margin-bottom: 0 !important;
             width: 600px;
 
             position: absolute;
-            top: 50%;
+            top: 10%;
             left: 50%;
             transform: translate(-50%, -50%); /* Perfect centering */
             
@@ -45,7 +45,9 @@ margin-bottom: 0 !important;
         }
         .donation-card {
             position: absolute;
-            bottom: 20px;
+            top: 50px;
+            bottom: 50px;
+            left: 20px;
             right: 20px;
             background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
             padding: 20px;

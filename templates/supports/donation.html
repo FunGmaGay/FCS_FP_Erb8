@@ -11,16 +11,27 @@
             <h2 style="color:#006600">Please donate KYK Foundation</h2>
         </div>
         <div class="donation-card">
-            <form id="donationForm" onsubmit="return showThankYouModal(event);">
+            <input type="hidden" id="hiddenFormAction" value="{% url 'supports:donation' %}">
+            <form id="donation_form" method="POST">
+                {% csrf_token %}
+                <div class="form-group input-group">
+                    <input type="text" id="last_name" name="last_name" class="form-control" placeholder="Last Name">
+                </div>
+                <div class="form-group input-group">
+                    <input type="text" id="first_name" name="first_name" class="form-control" placeholder="First Name">
+                </div>
+                <div class="form-group input-group">
+                    <input type="text" id="email" name="email" class="form-control" placeholder="Email">
+                </div>
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text">HKD</span>
                     </div>
-                    <input type="number" id="donationAmount" name="amount" class="form-control" placeholder="Enter amount" min="1" required>
+                    <input type="number" id="contribute_fund" name="contribute_fund" class="form-control" placeholder="Contribute Fund" min="1" required>
                 </div>
-                <button type="submit" class="support-button">Donate</button>
-            </form>
-        </div>
+            <button type="submit" class="support-button" onclick=" showThankYouModal(event);">Donate</button>
+        </form>
+    </div>
     </div>
 
 
@@ -38,7 +49,7 @@
                     Thank you so much for your sincere donation to KYK Foundation. Your support surely helps us to continue Kung Yung Koon's spirit.
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                    <button id="def" type="button" class="btn btn-light" data-dismiss="modal" onclick="closeThankYouModal();">Close</button>
                 </div>
             </div>
         </div>
