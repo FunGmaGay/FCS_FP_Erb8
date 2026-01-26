@@ -2,6 +2,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
+from enrolments.models import Enrolment
 #from contacts.models import Contact
 
 def login(request):
@@ -73,10 +74,11 @@ def register(request):
         return render(request, 'accounts/register.html')
 
 def dashboard(request):
-    #user_contacts = Contact.objects.filter(user_id=request.user.id)
-    #context = {"contacts": user_contacts}
-    return render(request, 'accounts/dashboard.html')   
-    return redirect("enrolments:apply") 
+    if request.user.is_authenticated:
+        enrolmentList = Enrolment.objects.all().filter(auth_user__id = request.user.id)
+        context2 = {"enrolments": enrolmentList}
+        return render(request, "accounts/dashboard.html", context2)
+    else:
+        return render(request, 'accounts/login.html')
 
 
-# Create your views here.

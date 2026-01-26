@@ -3,15 +3,15 @@ from django.conf import settings
 from django.db import models
 
 class Enrolment(models.Model):
-    auth_user_id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    auth_user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     gender = models.CharField(max_length=10)
     age = models.IntegerField()
     phone = models.IntegerField()
     email = models.CharField(max_length=50)
-    applied_date = models.DateTimeField()
-    workshop_id = models.ForeignKey(Workshop, on_delete=models.DO_NOTHING)
+    applied_date = models.DateTimeField(auto_now_add=True)
+    workshop = models.ForeignKey(Workshop, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return self.last_name
