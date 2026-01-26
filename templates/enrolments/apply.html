@@ -2,51 +2,45 @@
 {% load static %}
 {% block content %} 
 
-<!-- Header -->
     <header>
-        <h1>Support Us</h1>
+        <h1></h1>
     </header>
 
-    <div class="application">
-        <form id="volunteerForm" action="your-server-endpoint" method="post" onsubmit="return submitForm(event)">
-            <label for="applicationType">Application Type:</label>
+    <div class="apply">
+        {% include 'partials/_alert.html' %}
+        <form id="volunteerForm" action="{% url 'enrolments:update' %}" method="post">
+            <!--<label for="applicationType">Application Type:</label>
             <select id="applicationType" name="applicationType" required onchange="toggleWorkshopDropdown()">
                 <option value="" disabled selected>Select an option</option>
                 <option value="volunteer">Volunteer Registration</option>
                 <option value="workshop">Workshop Application</option>
-            </select>
+            </select>-->
+            {% csrf_token %}
+			<input type="hidden" id="workshop_id" name="workshop_id" value="{{workshop_id}}">
 
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+            <label for="workshop">Workshop: {{workshop}}</label>
+
+            <label for="name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" required>
+
+            <label for="name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" required>
 
             <label for="gender">Gender:</label>
             <select id="gender" name="gender" required>
                 <option value="" disabled selected>Select your gender</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
-                <option value="others">Others</option>
+                <!-- <option value="others">Others</option>-->
             </select>
-
-            <div id="workshopDropdown" style="display: none;">
-                <label for="workshop">Select Workshop:</label>
-                <select id="workshop" name="workshop" required>
-                    <option value="" disabled selected>Select a workshop</option>
-                    <option value="urduLearning">Urdu Class for Beginners</option>
-                    <option value="pakistaniMilkTea">Pakistani Milk Tea</option>
-                    <option value="henna">Pakistani Henna</option>
-                </select>
-            </div>
-
-            <label for="email">Email Address:</label>
-            <input type="email" id="email" name="email" required>
 
             <label for="phone">Phone Number:</label>
             <input type="text" id="phone" name="phone" required>
 
-            <div id="volunteerReason" style="display: none;">
-                <label for="reason">Why do you want to apply?</label>
-                <textarea id="reason" name="reason" required></textarea>
-            </div>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            
 
             <button type="submit">Submit</button>
         </form>

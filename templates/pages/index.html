@@ -11,6 +11,7 @@
         <div class="container" style="background: rgba(0, 0, 0, 0.2); padding: 20px; border-radius: 8px;">
             <h1 class="display-4 font-weight-bold text-white" style="opacity: 0.9;">Continuing KYK's Spirit</h1>
             <h3 class="lead text-white" style="opacity: 0.8;"><b>Preserving KYK's legacy by building a caring and inclusive society in Hong Kong.</b></h3>
+            <a href="{% url "supports:support" %}" class="btn btn-light btn-lg mx-2">Support Us</a>
             <a href="{% url "pages:about" %}" class="btn btn-outline-light btn-lg mx-2">About Us</a>
         </div>
     </header>
@@ -21,6 +22,7 @@
             <div class="text-center mb-5">
                 <h2 class="font-weight-bold">Kung Yung Koon's Spirit</h2>
                 <p class="pakistani-green">Click to know more about Kung Yung Koon now!</p>
+                <a href="{% url "kyks:kyk" %}" class="btn btn-volunteer btn-lg mx-2">About KYK</a>
             </div>
             <div class="row text-center">
                 <div class="col-md-4">
@@ -47,6 +49,7 @@
         <div class="container">
             <h2 class="font-weight-bold">Get Involved Today</h2>
             <p class="lead">Your participation definately helps continue KYK's inspiring journey. Join hands with us!</p>
+            <a href="{% url "workshops:workshop" %}" class="btn btn-outline-light btn-lg mx-2">Join our Workshops</a>
         </div>
     </section>
 

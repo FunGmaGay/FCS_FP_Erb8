@@ -32,7 +32,7 @@ label {
         button:hover {
             background-color: #004d00; /* Darker green on hover */
         }
-        .application {
+        .apply {
             max-width: 600px;
             margin: 20px auto;
             padding: 20px;

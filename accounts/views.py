@@ -6,15 +6,18 @@ from django.contrib.auth.models import User
 
 def login(request):
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
+        print("11")
+        username = request.POST['username2']
+        password = request.POST['password3']
         user = auth.authenticate(username=username, password=password)
         if user is not None:
+            print("22")
             print("user.is_authenticated -", user.is_authenticated)
             auth.login(request, user)
             messages.success(request, 'You have logged in successfully.')
             return redirect('accounts:dashboard')
-        else:    
+        else:
+            print("33")
             messages.error(request, 'Invalid credentials')
             return redirect('accounts:login') 
     else:
@@ -72,7 +75,8 @@ def register(request):
 def dashboard(request):
     #user_contacts = Contact.objects.filter(user_id=request.user.id)
     #context = {"contacts": user_contacts}
-    return render(request, 'accounts/dashboard.html')    
+    return render(request, 'accounts/dashboard.html')   
+    return redirect("enrolments:apply") 
 
 
 # Create your views here.

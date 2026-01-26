@@ -20,6 +20,7 @@ class Workshop(models.Model):
     day_of_the_week = models.CharField(max_length=3, default=' ')
     start_date = models.DateField()
     start_time = models.TimeField(default=timezone.now)
+    end_time = models.TimeField(default=timezone.now)
     # fee = models.IntegerField()
     # tagline = models.CharField(max_length=100)
     # description = models.CharField(max_length=500)
@@ -27,6 +28,7 @@ class Workshop(models.Model):
     applied_no = models.IntegerField()
     is_published = models.BooleanField(default=True)
     list_date = models.DateTimeField(auto_now_add=True)
+    level = models.IntegerField()
 
 
     class Meta:

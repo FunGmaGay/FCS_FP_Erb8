@@ -5,4 +5,5 @@ app_name = 'enrolments'
 
 urlpatterns = [
     path('apply/<int:workshop_id>/', views.apply, name='apply'),
+    path('update/', views.update, name='update'),
 ]

@@ -2,57 +2,110 @@
 {% load static %}
 {% block content %} 
 
-<!-- make changes on the margin of the footer only at this page -->
-<body class="home-page">
+<style>
+  .donation_card {
+            top: 50px;
+            bottom: 50px;
+            left: 20px;
+            right: 20px;
+            opacity: 0.8;
+            background-color:  rgba(196, 192, 192, 0.74); 
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: #006600;
+            
+        }
+</style>
+<!-- Donation Section Start -->
+<section class="bg-light text-center">
+    <div
+    style="
+        background-image: url('{% static "images/donateus.jpg" %}');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    "
+    >
+    <div
+        style="
+        text-align: center;
+        opacity: 0.8;
+        background: rgba(196, 192, 192, 0.74);
+        padding: 20px;
+        border-radius: 8px;
+        width: 50%;
+        max-width: 500px;
+        margin-bottom: 180px;
+        margin-top: 30px;
+        "
+    >
+        <h2 style="color: #006600; margin: 0">Please donate KYK Foundation</h2>
+    </div>
 
-<!-- Donation Section -->
-    <div class="background-area" >
-        <div class="transparent-box" >
-            <h2 style="color:#006600">Please donate KYK Foundation</h2>
+    <div class="lead mb-4 donation_card" style="width: 50%; max-width: 500px">
+      <input type="hidden" id="hiddenFormAction" value="{% url 'supports:donation' %}">
+        <form id="donation_form" method="POST">
+        {% csrf_token %}
+        <div class="form-group input-group">
+        <input
+            type="text"
+            id="last_name"
+            name="last_name"
+            class="form-control"
+            placeholder="Last Name"
+            />
         </div>
-        <div class="donation-card">
-            <input type="hidden" id="hiddenFormAction" value="{% url 'supports:donation' %}">
-            <form id="donation_form" method="POST">
-                {% csrf_token %}
-                <div class="form-group input-group">
-                    <input type="text" id="last_name" name="last_name" class="form-control" placeholder="Last Name">
-                </div>
-                <div class="form-group input-group">
-                    <input type="text" id="first_name" name="first_name" class="form-control" placeholder="First Name">
-                </div>
-                <div class="form-group input-group">
-                    <input type="text" id="email" name="email" class="form-control" placeholder="Email">
-                </div>
-                <div class="form-group input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">HKD</span>
-                    </div>
-                    <input type="number" id="contribute_fund" name="contribute_fund" class="form-control" placeholder="Contribute Fund" min="1" required>
-                </div>
-            <button type="submit" class="support-button" onclick=" showThankYouModal(event);">Donate</button>
+        <div class="form-group input-group">
+        <input
+            type="text"
+            id="first_name"
+            name="first_name"
+            class="form-control"
+            placeholder="First Name"
+        />
+        </div>
+        <div class="form-group input-group">
+        <input
+            type="text"
+            id="email"
+            name="email"
+            class="form-control"
+            placeholder="Email"
+        />
+        </div>
+        <div class="form-group input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">HKD</span>
+        </div>
+        <input
+            type="number"
+            id="contribute_fund"
+            name="contribute_fund"
+            class="form-control"
+            placeholder="Contribute Fund"
+            min="1"
+            required
+        />
+        </div>
+        <button
+            type="submit"
+            class="support-button"
+            onclick="showThankYouModal(event)"
+            style="width: 100%; padding: 12px"
+        >
+            Donate
+        </button>
         </form>
     </div>
     </div>
-
-
-    <!-- Thank You Modal -->
-    <div class="modal fade" id="thankYouModal" tabindex="-1" role="dialog" aria-labelledby="thankYouModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 class="modal-title" id="thankYouModalLabel">Thank You for Your Donation!</h2>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Thank you so much for your sincere donation to KYK Foundation. Your support surely helps us to continue Kung Yung Koon's spirit.
-                </div>
-                <div class="modal-footer">
-                    <button id="def" type="button" class="btn btn-light" data-dismiss="modal" onclick="closeThankYouModal();">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
+</section>
+<!-- Donation Section End -->
 
 {% endblock %}

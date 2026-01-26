@@ -14,14 +14,7 @@
         <ul class="navbar-nav">
             <li class="nav-item"><a class="nav-link text-white" href="{% url "supports:contact" %}">Contact Us</a></li>
             <li class="nav-item"><a class="nav-link text-white" href="{% url "supports:support" %}">Support Us</a></li>
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Workshop</a>
-                <div class="dropdown-menu">
-                    <a href="{% url "workshops:workshop" %}" class="dropdown-item">Workshops 1</a>
-                    <a href="#" class="dropdown-item">Workshops 2</a>
-                    <a href="#" class="dropdown-item">Workshops 3</a>
-                </div>
-            </div>
+            <li class="nav-item"><a class="nav-link text-white" href="{% url "workshops:workshop" %}">Workshops</a></li>
             <li class="nav-item"><a class="nav-link text-white" href="{% url "kyks:kyk" %}">Kung Yung Koon</a></li>
             <li class="nav-item"><a class="nav-link text-white" 
             href="{% url "pages:about" %}">About Us</a></li>
