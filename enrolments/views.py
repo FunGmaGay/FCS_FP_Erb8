@@ -12,6 +12,7 @@ def apply(request, workshop_id):
         context = {"workshop_id": workshop_id, "workshop": workshops.workshop}
         return render(request, 'enrolments/apply.html', context)
     else:
+        request.session['enrolment'] = workshop_id
         return render(request, 'accounts/login.html') 
     #return redirect("accounts:dashboard")
 
@@ -25,10 +26,10 @@ def update(request):
         email = request.POST['email']
         workshop_id = request.POST['workshop_id']
         print('user_id=', user_id, ', workshop_id=', workshop_id)
-        enrolled = Enrolment.objects.all().filter(auth_user__id = user_id, workshop__id = workshop_id)
+        enrolled = Enrolment.objects.all().filter(workshop_id__id = workshop_id)
         if enrolled:
             messages.error(request, 'We are sorry to inform you that your application is failed.')
-            workshop = get_object_or_404(Workshops, pk = workshop_id)
+            workshop = get_object_or_404(Workshop, pk = workshop_id)
             context = {"workshop_id": workshop_id, "workshop": workshop.workshop}
             return render(request, 'enrolments/apply.html', context)
         
@@ -36,19 +37,19 @@ def update(request):
         workshop2 = get_object_or_404(Workshop, pk = workshop_id)
 
         enrolment = Enrolment(
-                        auth_user=auth_user2,
+                        auth_user_id=auth_user2,
                         last_name=last_name,
                         first_name=first_name,
                         gender=gender,
                         email=email,
                         phone=phone,
-                        workshop=workshop2
+                        workshop_id=workshop2
                     )
         enrolment.save()
         
         messages.success(request, 'You have enrolled the course successfully.')
         
-        enrolmentList = Enrolment.objects.all().filter(auth_user__id = user_id)
+        enrolmentList = Enrolment.objects.all().filter(auth_user_id__id = user_id)
         context2 = {"enrolments": enrolmentList}
         
         return render(request, "accounts/dashboard.html", context2)

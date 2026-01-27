@@ -8,8 +8,8 @@
       <div class="container">
         <div class="row text-center">
           <div class="col-md-12">
-            <h1 class="display-4">User Dashboard</h1>
-            <p class="lead">Manage your BC Health Care account</p>
+            <h1 style="color:#006600;" class="display-4">Your Application Record</h1>
+            <h3 style="color:#006600;" class="lead">Thank you for your sincere support on KYKF.</h3>
           </div>
         </div>
       </div>
@@ -28,42 +28,42 @@
         </nav>
       </div>
     </section>
-    {% include 'partials/_alert.html' %}
+   
     <section id="dashboard" class="py-4">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
             <h2>Welcome {{user.username}}</h2>
-            {% if contacts %}
-            <p>Here are the workshops that you have applied previously.</p>
+            {% if enrolments %}
+            <p>Here are the courses that you have enrolled before.</p>
             <table class="table">
               <thead>
                 <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Clinic</th>
-                  <th></th>
+                  <th scope="col">Course Id</th>
+                  <th scope="col">Course</th>
+                  <th scope="col">Location</th>
+                  <th scope="col">Start date</th>
+                  <th scope="col">Start time</th>
+                  <th scope="col">End time</th>
+             
                 </tr>
               </thead>
               <tbody>
-                {% for contact in contacts %}
+                {% for enrolment in enrolments %}
                 <tr>
-                  <td>{{ contact.listing_id}}</td>
-                  <td>{{ contact.listing | title }}</td>
-                  <td>
-                    <a class="btn btn-light" href="{% url 'listings:listing' contact.listing_id %}">View Listing</a>
-                    <button class="btn btn-danger"
-                    data-url="{% url 'contacts:delete_contact' contact.id %}"
-                    data-toggle="modal"
-                    data-target="#deleteConfirmModal"
-                    data-id="{{ contact.id }}">Delete Listing</button>
-                    <a href="{% url 'contacts:edit_contact' contact.id %}" class="btn btn-success">Edit Message</a>
-                  </td>
+                  <td>{{ enrolment.workshop.id }}</td>
+				  <td>{{ enrolment.workshop.workshop }}</td>
+				  <td>The Centre</td>
+				  <td>{{ enrolment.workshop.start_date }}</td>
+				  <td>{{ enrolment.workshop.start_time }}</td>
+				  <td>{{ enrolment.workshop.end_time }}</td>
+				  
                 </tr>
                 {% endfor %}
-            </tbody>
+              </tbody>
             </table>
             {% else %}
-            <p>You have not made any inquiries yet.</p>
+            <p>You have not signed up for any courses.</p>
             {% endif %}
           </div>
         </div>

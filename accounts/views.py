@@ -3,7 +3,6 @@ from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
 from enrolments.models import Enrolment
-#from contacts.models import Contact
 
 def login(request):
     if request.method == 'POST':
@@ -75,10 +74,16 @@ def register(request):
 
 def dashboard(request):
     if request.user.is_authenticated:
-        enrolmentList = Enrolment.objects.all().filter(auth_user__id = request.user.id)
-        context2 = {"enrolments": enrolmentList}
-        return render(request, "accounts/dashboard.html", context2)
+        enrol = request.session.get('enrolment', 'mini')
+        if enrol == 'mini':
+            enrolmentList = Enrolment.objects.all().filter(auth_user_id__id = request.user.id)
+            context2 = {"enrolments": enrolmentList}
+            return render(request, "accounts/dashboard.html", context2)
+        else:
+            request.session['enrolment'] = 'mini'
+            return redirect("enrolments:apply", str(enrol))
     else:
         return render(request, 'accounts/login.html')
 
 
+# Create your views here.
