@@ -42,18 +42,22 @@ def donation2(request):
     if email != '':
         print("**********2")
         buffer2 = io.BytesIO()
-        #img_path = os.path.join(settings.STATIC_ROOT, 'images/gojo.jpg')
+        img_path = os.path.join(settings.STATIC_ROOT, 'images/thankyou.jpeg')
 
         p = canvas.Canvas(buffer2, pagesize=landscape(A6))
-        p.drawString(0, 250, "              Donation Recipt")
+        #p.drawString(0, 250, "              Donation Recipt")
         if last_name != '' or first_name != '':
-            p.drawString(0, 230, "Dear " + last_name + " " + first_name + ",")
+            p.drawString(0, 280, "Dear " + first_name + " " + last_name + ",")
         else:
-            p.drawString(0, 230, "Dear Sir / Madam,")
+            p.drawString(0, 280, "Dear Sir / Madam,")
 
-        p.drawString(0, 200, "Thank you for your donation with a value of $" + contribute_fund + ".") 
+        p.drawString(0, 260, "    We would like to send our sincere thank for your donation. Attached is your")
 
-        #p.drawImage(img_path, 0, 0, width=480, height=214, mask='auto')
+        p.drawString(0, 240, "receipt for your kind contribution of $" + contribute_fund + ".")
+
+        p.drawString(0, 220, "                                                                     Best Regards, KYK Foundation")
+
+        p.drawImage(img_path, 0, 0, width=480, height=214, mask='auto')
 
         p.showPage()
         p.save()
