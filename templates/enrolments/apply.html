@@ -2,11 +2,7 @@
 {% load static %}
 {% block content %} 
 
-    <header>
-        <h1></h1>
-    </header>
-
-    <div class="apply">
+    <div class="col-md-6 offset-md-3">
         {% include 'partials/_alert.html' %}
         <form id="volunteerForm" action="{% url 'enrolments:update' %}" method="post">
             <!--<label for="applicationType">Application Type:</label>
@@ -18,7 +14,7 @@
             {% csrf_token %}
 			<input type="hidden" id="workshop_id" name="workshop_id" value="{{workshop_id}}">
 
-            <label for="workshop">Workshop: {{workshop}}</label>
+            <label for="workshop"><h1 style="color:#006600">Workshop: {{workshop}}</h1></label>
 
             <label for="name">First Name:</label>
             <input type="text" id="first_name" name="first_name" required>
