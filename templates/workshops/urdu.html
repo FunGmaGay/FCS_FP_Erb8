@@ -104,10 +104,8 @@
         <!-- Apply and table-->
         <div class="container my-2">
           <div class="row justify-content-around align-items-start">
-            <!-- Left side content -->
-            <div class="col-3">
-              <div class="row">
-                <div class="col-md-9">
+            <div class="row">
+              <div class="col-md-9"
                   <p
                     class="lead font-italic mb-4"
                     style="
@@ -124,6 +122,17 @@
                   >
                     {{ workshop.detail }}
                   </p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+            <!-- Left side content -->
+            <div class="col-3">
+              <div class="row">
+                <div class="col-md-9">
                   <a href="/enrolments/apply/1" class="btn btn-apply shadow-lg"
                     >Apply Now</a
                   >
@@ -157,9 +166,6 @@
               </table>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
 
     <!-- THE FLOATING TUTOR CARD (from your CSS) -->
     <div class="floating-tutor-card p-4 d-none d-lg-block">
@@ -167,7 +173,7 @@
         <div class="position-relative d-inline-block mb-3">
           <img
             src="{{ workshop.tutor_photo.url }}"
-            class="rounded-circle shadow object-fit-cover"
+            class="rounded-circle shadow"
             style="width: 130px; height: 130px; border: 5px solid #fff"
           />
           <span

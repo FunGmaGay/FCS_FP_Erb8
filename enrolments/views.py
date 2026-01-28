@@ -26,7 +26,7 @@ def update(request):
         email = request.POST['email']
         workshop_id = request.POST['workshop_id']
         print('user_id=', user_id, ', workshop_id=', workshop_id)
-        enrolled = Enrolment.objects.all().filter(workshop_id__id = workshop_id)
+        enrolled = Enrolment.objects.all().filter(workshop_id__id = workshop_id, auth_user_id__id=user_id)
         if enrolled:
             messages.error(request, 'We are sorry to inform you that your application is failed.')
             workshop = get_object_or_404(Workshop, pk = workshop_id)
@@ -37,13 +37,13 @@ def update(request):
         workshop2 = get_object_or_404(Workshop, pk = workshop_id)
 
         enrolment = Enrolment(
-                        auth_user_id=auth_user2,
+                        auth_user_id=user_id,
                         last_name=last_name,
                         first_name=first_name,
                         gender=gender,
                         email=email,
                         phone=phone,
-                        workshop_id=workshop2
+                        workshop_id=workshop_id
                     )
         enrolment.save()
         
