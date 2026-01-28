@@ -53,9 +53,9 @@ def donation2(request):
 
         p.drawString(0, 260, "    We would like to send our sincere thank for your donation. Attached is your")
 
-        p.drawString(0, 240, "receipt for your kind contribution of $" + contribute_fund + ".")
+        p.drawString(0, 240, " receipt for your kind contribution of $" + contribute_fund + ".")
 
-        p.drawString(0, 220, "                                                                     Best Regards, KYK Foundation")
+        p.drawString(0, 220, "                                                                                             Best Regards, KYK Foundation")
 
         p.drawImage(img_path, 0, 0, width=480, height=214, mask='auto')
 
