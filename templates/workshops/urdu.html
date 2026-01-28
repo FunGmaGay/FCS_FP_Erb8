@@ -138,6 +138,31 @@
     </div>
 </section>
 
+<table class="table">
+              <thead>
+                <tr>
+                  <th style="color:#006600" scope="col">Course Id</th>
+                  <th style="color:#006600" scope="col">Course</th>
+                  <th style="color:#006600" scope="col">Location</th>
+                  <th style="color:#006600" scope="col">Start date</th>
+                  <th style="color:#006600" scope="col">Start time</th>
+                  <th style="color:#006600" scope="col">End time</th>
+             
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ workshop.id }}</td>
+				  <td>{{ workshop.workshop }}</td>
+				  <td>Our Centre</td>
+				  <td>{{ workshop.start_date }}</td>
+				  <td>{{ workshop.start_time }}</td>
+				  <td>{{ workshop.end_time }}</td>
+				  
+                </tr>
+              </tbody>
+            </table>
+
 <!-- Back Home Button -->
 <div class="text-center py-5">
     <a href="{% url 'pages:index' %}" class="btn text-muted" style="border-bottom: 2px solid #ddd; border-radius: 0;">

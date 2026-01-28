@@ -66,7 +66,7 @@
   left: 0;
   z-index: 0;
   border-radius: 5px;
-  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.7),#006600);
+  background: #006600;
   transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
 }
 input[type="radio"]{
@@ -81,10 +81,10 @@ input[type="radio"]{
   user-select: none;
 }
 #signup:checked ~ label.login{
-  color: #000;
+  color: #006600;
 }
 #login:checked ~ label.signup{
-  color: #000;
+  color: #006600;
 }
 #login:checked ~ label.login{
   cursor: default;
@@ -181,14 +181,14 @@ form .btn input[type="submit"]{
 
  .form-control:focus {
             border-color: #006600; /* Green border color when focused */
-            box-shadow: 0 0 0 0.2rem rgba(0, 102, 0, 0.25);
+            box-shadow: #006600;
  }
     </style>
     <center>
     <div class="wrapper">
       <div class="title-text">
-        <div class="title login">Login Form</div>
-        <div class="title signup">Signup Form</div>
+        <div style="color: #006600" class="title login">Login Form</div>
+        <div style="color: #006600" class="title signup">Signup Form</div>
       </div>
       <div class="form-container">
         <div class="slide-controls">

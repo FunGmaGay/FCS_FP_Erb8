@@ -30,3 +30,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT) + debug_toolbar_urls()
 
+#change admin site titles
+admin.site.site_header = "KYKF Admin"
+admin.site.site_title = "KYKF Admin Portal"
+admin.site.index_title = "Welcome to KYKF Admin Portal"
