@@ -1,172 +1,231 @@
-{% extends "base.html" %}
-{% load static %}
-
-{% block content %}
+{% extends "base.html" %} {% load static %} {% block content %}
 <!-- Font Import for the Artistic Look -->
-<link href="https://fonts.googleapis.com" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="stylesheet" />
 
 <style>
-.creative-hero { position: relative; padding: 80px 0; overflow: hidden; }
-    
-    .floating-tutor-card {
-        position: absolute;
-        top: 15%;
-        right: 5%;
-        width: 380px;
-        z-index: 10;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        border-radius: 30px;
-        transform: rotate(2deg);
-        transition: transform 0.4s ease;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    }
-    
-    .floating-tutor-card:hover { 
-        transform: rotate(0deg) scale(1.02); 
-    }
-    
-    .workshop-bg-text {
-        position: absolute;
-        font-size: 12rem;
-        font-weight: 900;
-        color: rgba(0, 102, 0, 0.05);
-        top: -50px;
-        left: -20px;
-        z-index: -1;
-        pointer-events: none;
-    }
-    
-    .accent-blob {
-        position: absolute;
-        width: 400px;
-        height: 400px;
-        background: radial-gradient(circle, rgba(0,102,0,0.1) 0%, rgba(255,255,255,0) 70%);
-        top: 0; left: 0; z-index: -2;
-    }
+  .creative-hero {
+    position: relative;
+    padding: 80px 0;
+    overflow: hidden;
+  }
 
-    /* Supporting Styles for Content */
-    .main-title {
-        font-family: 'Dancing Script', cursive;
-        font-size: 5rem;
-        color: #006600;
-    }
-    .hero-img {
-        border-radius: 50px 0 50px 0;
-        width: 100%;
-        height: 550px;
-        object-fit: cover;
-        box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-    }
-    .btn-apply {
-        background: #000;
-        color: #fff;
-        padding: 18px 45px;
-        border-radius: 50px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        transition: 0.3s;
-    }
-    .btn-apply:hover {
-        background: #006600;
-        color: #fff;
-        transform: translateY(-3px);
-    }
+  .floating-tutor-card {
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    width: 380px;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    transform: rotate(2deg);
+    transition: transform 0.4s ease;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .floating-tutor-card:hover {
+    transform: rotate(0deg) scale(1.02);
+  }
+
+  .workshop-bg-text {
+    position: absolute;
+    font-size: 12rem;
+    font-weight: 900;
+    color: rgba(0, 102, 0, 0.05);
+    top: -50px;
+    left: -20px;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .accent-blob {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(
+      circle,
+      rgba(0, 102, 0, 0.1) 0%,
+      rgba(255, 255, 255, 0) 70%
+    );
+    top: 0;
+    left: 0;
+    z-index: -2;
+  }
+
+  /* Supporting Styles for Content */
+  .main-title {
+    font-family: "Dancing Script", cursive;
+    font-size: 5rem;
+    color: #006600;
+  }
+  .hero-img {
+    border-radius: 50px 0 50px 0;
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  }
+  .btn-apply {
+    background: #000;
+    color: #fff;
+    padding: 18px 45px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s;
+  }
+  .btn-apply:hover {
+    background: #006600;
+    color: #fff;
+    transform: translateY(-3px);
+  }
 </style>
 
-
 <section class="creative-hero">
-    <!-- Decorative Background Elements from your CSS -->
-    <div class="workshop-bg-text">URDU</div>
-    <div class="accent-blob"></div>
+  <!-- Decorative Background Elements from your CSS -->
+  <div class="workshop-bg-text">URDU</div>
+  <div class="accent-blob"></div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8">
-                <h1 class="main-title mb-4">{{ workshop.workshop }}</h1>
-                
-                <!-- Main Featured Image -->
-                <div class="position-relative mb-5">
-                    <img src="{{ workshop.ws_photo.url }}" class="hero-img" alt="Urdu Calligraphy">
-                </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <h1 class="main-title mb-4">{{ workshop.workshop }}</h1>
 
-                <!-- Descriptive Content -->
-                <div class="row">
-                    <div class="col-md-9">
-                        <p class="lead font-italic mb-4" style="color: #444; border-left: 4px solid #006600; padding-left: 20px;">
-                            {{ workshop.quote }}
-                        </p>
-                        <p class="text-secondary mb-5" style="font-size: 1.1rem; line-height: 1.8;">
-                            {{ workshop.detail }}
-                        </p>
-                        <a href="/enrolments/apply/1" class="btn btn-apply shadow-lg">Apply Now</a>
-                    </div>
-                </div>
-            </div>
+        <!-- Main Featured Image -->
+        <div class="position-relative mb-5">
+          <img
+            src="{{ workshop.ws_photo.url }}"
+            class="hero-img"
+            alt="Urdu Calligraphy"
+          />
         </div>
 
-        <!-- THE FLOATING TUTOR CARD (from your CSS) -->
-        <div class="floating-tutor-card p-4 d-none d-lg-block">
-            <div class="text-center">
-                <div class="position-relative d-inline-block mb-3">
-                    <img src="{{ workshop.tutor_photo.url }}" 
-                        class="rounded-circle shadow" 
-                        style="width: 130px; height: 130px; border: 5px solid #fff;">
-                    <span class="badge position-absolute" 
-                        style="bottom: 10px; right: -10px; background: #006600; color: white; padding: 8px 15px; border-radius: 20px;">
-                        Expert Tutor
-                    </span>
+        <!-- Apply and table-->
+        <div class="container my-2">
+          <div class="row justify-content-around align-items-start">
+            <!-- Left side content -->
+            <div class="col-3">
+              <div class="row">
+                <div class="col-md-9">
+                  <p
+                    class="lead font-italic mb-4"
+                    style="
+                      color: #444;
+                      border-left: 4px solid #006600;
+                      padding-left: 20px;
+                    "
+                  >
+                    {{ workshop.quote }}
+                  </p>
+                  <p
+                    class="text-secondary mb-5"
+                    style="font-size: 1.1rem; line-height: 1.8"
+                  >
+                    {{ workshop.detail }}
+                  </p>
+                  <a href="/enrolments/apply/1" class="btn btn-apply shadow-lg"
+                    >Apply Now</a
+                  >
                 </div>
-                
-                <h3 style="font-family: 'Dancing Script', cursive; font-size: 2.2rem; color: #333;">{{ workshop.tutor_name }}</h3>
-                <p class="text-muted small mb-3">{{ workshop.tagline }}</p>
-                
-                <div class="text-left small text-secondary px-3 mb-4">
-                    {{ workshop.experience }}
-                </div>
-                
-                <hr class="my-4">
-                
-                <div class="d-flex justify-content-center gap-4">
-                    <a href="#" class="text-dark"><i class="fab fa-instagram fa-lg"></i></a>
-                    <a href="#" class="text-dark"><i class="fab fa-linkedin fa-lg"></i></a>
-                    <a href="#" class="text-dark"><i class="far fa-paper-plane fa-lg"></i></a>
-                </div>
+              </div>
             </div>
+
+            <!-- Right side content -->
+            <div class="col-9">
+              <table class="table table-responsive">
+                <thead>
+                  <tr>
+                    <th style="color: #006600" scope="col">Course Id</th>
+                    <th style="color: #006600" scope="col">Course</th>
+                    <th style="color: #006600" scope="col">Location</th>
+                    <th style="color: #006600" scope="col">Start date</th>
+                    <th style="color: #006600" scope="col">Start time</th>
+                    <th style="color: #006600" scope="col">End time</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{ workshop.id }}</td>
+                    <td>{{ workshop.workshop }}</td>
+                    <td>Our Centre</td>
+                    <td>{{ workshop.start_date }}</td>
+                    <td>{{ workshop.start_time }}</td>
+                    <td>{{ workshop.end_time }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</section>
 
-<table class="table">
-              <thead>
-                <tr>
-                  <th style="color:#006600" scope="col">Course Id</th>
-                  <th style="color:#006600" scope="col">Course</th>
-                  <th style="color:#006600" scope="col">Location</th>
-                  <th style="color:#006600" scope="col">Start date</th>
-                  <th style="color:#006600" scope="col">Start time</th>
-                  <th style="color:#006600" scope="col">End time</th>
-             
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>{{ workshop.id }}</td>
-				  <td>{{ workshop.workshop }}</td>
-				  <td>Our Centre</td>
-				  <td>{{ workshop.start_date }}</td>
-				  <td>{{ workshop.start_time }}</td>
-				  <td>{{ workshop.end_time }}</td>
-				  
-                </tr>
-              </tbody>
-            </table>
+    <!-- THE FLOATING TUTOR CARD (from your CSS) -->
+    <div class="floating-tutor-card p-4 d-none d-lg-block">
+      <div class="text-center">
+        <div class="position-relative d-inline-block mb-3">
+          <img
+            src="{{ workshop.tutor_photo.url }}"
+            class="rounded-circle shadow object-fit-cover"
+            style="width: 130px; height: 130px; border: 5px solid #fff"
+          />
+          <span
+            class="badge position-absolute"
+            style="
+              bottom: 10px;
+              right: -10px;
+              background: #006600;
+              color: white;
+              padding: 8px 15px;
+              border-radius: 20px;
+            "
+          >
+            Expert Tutor
+          </span>
+        </div>
+
+        <h3
+          style="
+            font-family: &quot;Dancing Script&quot;, cursive;
+            font-size: 2.2rem;
+            color: #333;
+          "
+        >
+          {{ workshop.tutor_name }}
+        </h3>
+        <p class="text-muted small mb-3">{{ workshop.tagline }}</p>
+
+        <div class="text-left small text-secondary px-3 mb-4">
+          {{ workshop.experience }}
+        </div>
+
+        <hr class="my-4" />
+
+        <div class="d-flex justify-content-center gap-4">
+          <a href="#" class="text-dark"
+            ><i class="fab fa-instagram fa-lg"></i
+          ></a>
+          <a href="#" class="text-dark"
+            ><i class="fab fa-linkedin fa-lg"></i
+          ></a>
+          <a href="#" class="text-dark"
+            ><i class="far fa-paper-plane fa-lg"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Back Home Button -->
 <div class="text-center py-5">
-    <a href="{% url 'pages:index' %}" class="btn text-muted" style="border-bottom: 2px solid #ddd; border-radius: 0;">
-    </a>
+  <a
+    href="{% url 'pages:index' %}"
+    class="btn text-muted"
+    style="border-bottom: 2px solid #ddd; border-radius: 0"
+  >
+  </a>
 </div>
 
 {% endblock %}
